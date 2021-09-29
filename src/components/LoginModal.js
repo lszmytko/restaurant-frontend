@@ -1,0 +1,71 @@
+import React, { useState } from "react";
+import Modal from "react-modal";
+import styled from "styled-components";
+import { LogReg } from ".";
+import { useLogRegContext } from "../context/logregcontext";
+
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+  },
+};
+
+const LoginModal = () => {
+  const [isOpen, setIsOpen] = useState(true);
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+  return (
+    <Modal
+      isOpen={isOpen}
+      style={{
+        content: {
+          top: "20%",
+          left: "20%",
+          right: "20%",
+          bottom: "20%",
+          background: "var(--clr-primary-9)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          borderRadius: "1rem",
+        },
+      }}
+    >
+      <Wrapper2>
+        <Wrapper>
+          <LogReg />
+        </Wrapper>
+      </Wrapper2>
+    </Modal>
+  );
+};
+
+const Wrapper = styled.div`
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // height: 100%;
+  // text-align: center;
+`;
+
+const Wrapper2 = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  i {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 3rem;
+    cursor: pointer;
+  }
+`;
+
+export default LoginModal;
