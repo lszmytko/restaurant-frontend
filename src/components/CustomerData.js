@@ -49,13 +49,16 @@ const CustomerData = ({ setLoading, loading }) => {
 
     try {
       console.log("przzepre");
-      const response = await axios.put(`https://restaurant-site-backend.herokuapp.com/update/${id}`, {
-        flatNumber,
-        phone,
-        name,
-        lastName,
-        street,
-      });
+      const response = await axios.put(
+        `https://restaurant-site-backend.herokuapp.com/update/${id}`,
+        {
+          flatNumber,
+          phone,
+          name,
+          lastName,
+          street,
+        }
+      );
 
       setLoading(false);
       setIsDataChanged(true);
@@ -173,10 +176,12 @@ const Wrapper = styled.section`
   input {
     border-radius: var(--radius);
     padding: 0.25rem;
+    height: 2rem;
   }
   input:focus {
     border: 0.25rem solid var(--clr-primary-5);
     border-radius: var(--radius);
+    outline: none;
   }
 
   label {

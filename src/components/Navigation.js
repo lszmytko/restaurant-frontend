@@ -3,8 +3,10 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Basket, Sidebar } from "../components/index";
 import React from "react";
+import { useGlobalContext } from "../context/context";
 
-const Navigation = () => {
+const Navigation = ({ smallScreenVisibility }) => {
+  const { isSidebarOpen } = useGlobalContext();
   return (
     <Wrapper>
       <div className="nav-container section-center">
@@ -46,6 +48,10 @@ const Wrapper = styled.nav`
     height: 100px;
   }
 
+  .pages {
+    display: none;
+  }
+
   .pages li a {
     color: var(--clr-primary-3);
     font-weight: bold;
@@ -62,13 +68,7 @@ const Wrapper = styled.nav`
   .logo-img {
     color: var(--clr-primary-3);
   }
-  .pages {
-    display: flex;
-    justify-content: space-between;
-    color: var(--clr-primary-5);
-    font-size: 1.25rem;
-    width: 100%;
-  }
+  
   .page {
     text-transform: uppercase;
   }
@@ -92,6 +92,15 @@ const Wrapper = styled.nav`
       width: 4rem;
       display: block;
     }
+
+    .pages {
+      display: flex;
+      justify-content: space-between;
+      color: var(--clr-primary-5);
+      font-size: 1.25rem;
+      width: 100%;
+    }
+
   }
 
   @media screen and (min-width: 992px) {

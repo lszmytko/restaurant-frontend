@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import { useGlobalContext } from "../context/context.js";
 import React from "react";
 
-const Sidebar = () => {
+const Sidebar = ({ smallScreenVisibility }) => {
   const { isSidebarOpen, setIsSidebarOpen } = useGlobalContext();
-  const classes = isSidebarOpen ? "sidebar-open" : "sidebar-closed";
+  const classes = isSidebarOpen
+    ? `sidebar-open ${smallScreenVisibility && smallScreenVisibility}`
+    : `sidebar-closed ${smallScreenVisibility && smallScreenVisibility}`;
 
   return (
     <Wrapper className={classes}>
@@ -86,10 +88,6 @@ const Wrapper = styled.aside`
     min-width: 0;
   }
 
-  .sidebar-page {
-    ${"" /* background: red; */}
-  }
-
   @media screen and (min-width: 768px) {
     width: 15rem;
     .toggle_button {
@@ -98,6 +96,7 @@ const Wrapper = styled.aside`
     ul li a {
       font-size: 1.5rem;
     }
+    
   }
 `;
 

@@ -9,6 +9,7 @@ import { useLogRegContext } from "../context/logregcontext.js";
 
 const DELIVERY_PRICE = 5;
 
+// Products shown just before ordering on order page
 const OrderPage = () => {
   const { orderedCard, setOrderedCard, userInfo } = useGlobalContext();
   const [finalInfoShown, setFinalInfoshown] = useState(false);
@@ -54,7 +55,7 @@ const OrderPage = () => {
     const value = orderedCard.reduce((total, item) => {
       return (total += item.quantity * item.price);
     }, 0);
-    setTotalValue(value);
+    setTotalValue(parseFloat(value.toFixed(2)));
   };
 
   // Placing an order - call to api
@@ -85,6 +86,7 @@ const OrderPage = () => {
     }
   };
 
+  // Calculate orrder on every change
   useEffect(() => {
     calculatetotalOrder();
   });

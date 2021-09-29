@@ -8,21 +8,28 @@ import {
   Sidebar,
   Basket,
 } from "../components/index.js";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useGlobalContext } from "../context/context.js";
 
 const FrontPage = () => {
-  const { isSidebarOpen, setIsSidebarOpen } = useGlobalContext();
+  const [isFullScreen, setIsFullScreen] = useState(true);
   // hiding sidebar
   useEffect(() => {
-    if (isSidebarOpen) {
-      setIsSidebarOpen(false);
+    // if (isSidebarOpen) {
+    //   setIsSidebarOpen(false);
+    // }
+    console.log(window.screen.width);
+    if (window.screen.width < 768) {
+      setIsFullScreen(false);
+    } else {
+      setIsFullScreen(true);
     }
   }, []);
   return (
     <div>
+      <Sidebar smallScreenVisibility={"smallScreenVisibility"} />
       <Basket />
-      <Navigation />
+      <Navigation/>
       <FrontImage />
       <About />
       <MainInfo />

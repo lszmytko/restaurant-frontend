@@ -175,11 +175,12 @@ button {
   background: var(--clr-primary-9);
 }
 
-.sidebar-invisible{
+.sidebar-invisible {
   display: none;
 }
 
-input {
+input,
+input:focus {
   border-radius: var(--radius);
   padding: 0.25rem;
 }
@@ -254,6 +255,10 @@ label {
   }
 
   .nav-sidebar {
+    display: none;
+  }
+
+  .smallScreenVisibility {
     display: none;
   }
 }
