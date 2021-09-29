@@ -180,8 +180,13 @@ input {
   padding: 0.25rem;
 }
 input:focus {
-  border: 2px solid var(--clr-primary-2);
+  border: 2px solid var(--clr-primary-3);
+  outline: none;
   border-radius: var(--radius);
+}
+
+label {
+  padding: 0.25rem;
 }
 
 /* PAGE HEADER  */

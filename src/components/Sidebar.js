@@ -3,11 +3,9 @@ import { Link } from "react-router-dom";
 import { useGlobalContext } from "../context/context.js";
 import React from "react";
 
-const Sidebar = (props) => {
+const Sidebar = () => {
   const { isSidebarOpen, setIsSidebarOpen } = useGlobalContext();
-  const classes = isSidebarOpen
-    ? "sidebar-open"
-    : "sidebar-closed" + " " + props.class;
+  const classes = isSidebarOpen ? "sidebar-open" : "sidebar-closed";
 
   return (
     <Wrapper className={classes}>
@@ -86,7 +84,6 @@ const Wrapper = styled.aside`
 
   .sidebar-pages {
     min-width: 0;
-    width: 500px;
   }
 
   .sidebar-page {

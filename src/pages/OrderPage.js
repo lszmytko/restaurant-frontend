@@ -60,22 +60,25 @@ const OrderPage = () => {
   // Placing an order - call to api
   const handleOrder = async (id) => {
     console.log("orderedCard", orderedCard);
-    console.log("price", totalValue)
-    console.log("userInfo", userInfo)
+    console.log("price", totalValue);
+    console.log("userInfo", userInfo);
     try {
-      const response = await axios.post("http://localhost:4000/placeOrder", {
-        dishes: orderedCard,
-        price: totalValue,
-        customer_id: userInfo.id,
-        token: userInfo.accessToken
-      });
-      console.log("response data", response.data)
-      if(response.data.success){
-        console.log("hhhh")
-        setShowLoginModal(false)
-        setFinalInfoshown(true)
-      } else{
-        setShowLoginModal(true)
+      const response = await axios.post(
+        "https://restaurant-site-api.herokuapp.com/placeOrder",
+        {
+          dishes: orderedCard,
+          price: totalValue,
+          customer_id: userInfo.id,
+          token: userInfo.accessToken,
+        }
+      );
+      console.log("response data", response.data);
+      if (response.data.success) {
+        console.log("hhhh");
+        setShowLoginModal(false);
+        setFinalInfoshown(true);
+      } else {
+        setShowLoginModal(true);
       }
     } catch (error) {
       console.log(error);
@@ -89,13 +92,13 @@ const OrderPage = () => {
   // Turn off loading component
 
   useEffect(() => {
-    const timeout = setTimeout(()=>{
+    const timeout = setTimeout(() => {
       setLoading(false);
-    }, 500)
+    }, 500);
     return () => {
       clearTimeout(timeout);
-    }
-  }, [loading])
+    };
+  }, [loading]);
 
   if (finalInfoShown) {
     return (

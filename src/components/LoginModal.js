@@ -4,17 +4,6 @@ import styled from "styled-components";
 import { LogReg } from ".";
 import { useLogRegContext } from "../context/logregcontext";
 
-const customStyles = {
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-  },
-};
-
 const LoginModal = () => {
   const [isOpen, setIsOpen] = useState(true);
   const closeModal = () => {
@@ -25,10 +14,10 @@ const LoginModal = () => {
       isOpen={isOpen}
       style={{
         content: {
-          top: "20%",
-          left: "20%",
-          right: "20%",
-          bottom: "20%",
+          top: "10%",
+          left: "10%",
+          right: "10%",
+          bottom: "10%",
           background: "var(--clr-primary-9)",
           display: "flex",
           alignItems: "center",

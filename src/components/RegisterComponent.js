@@ -52,6 +52,12 @@ const RegisterComponent = () => {
 
   const handleRegister = async (e) => {
     e.preventDefault();
+    setError({
+      password: "",
+      other: "",
+      callToApi: "",
+    });
+
     if (!name || !lastName || !email || !street || !flatNumber || !phone) {
       setError({ ...error, other: "Fill in everything" });
       return;
@@ -64,13 +70,8 @@ const RegisterComponent = () => {
     }
 
     try {
-      setError({
-        password: "",
-        other: "",
-        callToApi: "",
-      });
       const response = await axios.post(
-        "https://restaurant-site-backend.herokuapp.com/users/register",
+        "https://restaurant-site-api.herokuapp.com/users/register",
         {
           name,
           lastName,
@@ -95,9 +96,9 @@ const RegisterComponent = () => {
 
   return (
     <Wrapper>
-      <form action="/">
-        <h2>Zarejestruj się</h2>
-        <div>
+      <form action="/" className="registration-form">
+        <h2 className="registration-header">Rejestracja</h2>
+        <div className="registration-input-div">
           <label htmlFor="name">Imię</label>
           <input
             type="name"
@@ -108,7 +109,7 @@ const RegisterComponent = () => {
             onChange={(e) => handleNameChange(e)}
           />
         </div>
-        <div>
+        <div className="registration-input-div">
           <label htmlFor="last_name">Nazwisko</label>
           <input
             type="text"
@@ -119,7 +120,7 @@ const RegisterComponent = () => {
             onChange={(e) => handleLastNameChange(e)}
           />
         </div>
-        <div>
+        <div className="registration-input-div">
           <label htmlFor="email">Email</label>
           <input
             type="text"
@@ -130,7 +131,7 @@ const RegisterComponent = () => {
             onChange={(e) => handleEmailChange(e)}
           />
         </div>
-        <div>
+        <div className="registration-input-div">
           <label htmlFor="street">Ulica</label>
           <input
             type="text"
@@ -141,7 +142,7 @@ const RegisterComponent = () => {
             onChange={(e) => handleStreetChange(e)}
           />
         </div>
-        <div>
+        <div className="registration-input-div">
           <label htmlFor="flat_number">Nr domu</label>
           <input
             type="text"
@@ -152,7 +153,7 @@ const RegisterComponent = () => {
             onChange={(e) => handleFlatNumberChange(e)}
           />
         </div>
-        <div>
+        <div className="registration-input-div">
           <label htmlFor="password">Hasło</label>
           <input
             type="password"
@@ -163,7 +164,7 @@ const RegisterComponent = () => {
             onChange={(e) => handlePasswordChange(e)}
           />
         </div>
-        <div>
+        <div className="registration-input-div">
           <label htmlFor="phone">Phone number</label>
           <input
             type="text"
@@ -176,7 +177,7 @@ const RegisterComponent = () => {
         </div>
         <div className="buttons">
           <button
-            className="register-btn btn"
+            className="registration-btn btn"
             type="submit"
             onClick={(e) => handleRegister(e)}
           >
@@ -192,8 +193,42 @@ const RegisterComponent = () => {
 };
 
 const Wrapper = styled.div`
+  .registration-form {
+    // background: red;
+  }
+
+  .registration-input-div {
+    display: flex;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .registration-input-div input {
+    flex-grow: 1;
+    margin-left: 1rem;
+  }
+
+  .registration-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
   .error-message {
     color: red;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  .registration-btn {
+    width: 100%;
+  }
+
+  @media screen and (min-width: 768px) {
+    .registration-btn {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      border-radius: 1rem;
+    }
   }
 `;
 
