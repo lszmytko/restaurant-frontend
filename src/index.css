@@ -175,6 +175,10 @@ button {
   background: var(--clr-primary-9);
 }
 
+.sidebar-invisible{
+  display: none;
+}
+
 input {
   border-radius: var(--radius);
   padding: 0.25rem;

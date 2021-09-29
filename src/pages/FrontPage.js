@@ -21,7 +21,6 @@ const FrontPage = () => {
   }, []);
   return (
     <div>
-      <Sidebar class="nav-sidebar" />
       <Basket />
       <Navigation />
       <FrontImage />
