@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useGlobalContext } from "../context/context";
 import moment from "moment";
+import "moment/locale/pl";
 
 const CustomerHistory = () => {
   // Info about the user from global context
@@ -16,11 +17,14 @@ const CustomerHistory = () => {
   // Function to get the details about previous orders
   const getHistory = async () => {
     try {
-      const response = await axios.post("https://restaurant-site-backend.herokuapp.com/history", {
-        token: accessToken,
-        id,
-      });
-      // parse the json of the dishes
+      const response = await axios.post(
+        "https://restaurant-site-api.herokuapp.com/history",
+        {
+          token: accessToken,
+          id,
+        }
+      );
+      // parse the json of the dishes returned
       const finalResponse = response.data.message.map((element) => {
         return { ...element, dishes: JSON.parse(element.dishes)[0] };
       });
@@ -37,7 +41,8 @@ const CustomerHistory = () => {
   // On mount add order history to the state
   useEffect(() => {
     getHistory();
-  }, [userInfo]);
+    console.log("opdated history");
+  }, []);
   return (
     <Wrapper>
       <h3>Ostatnie zamówienia</h3>
@@ -58,7 +63,7 @@ const CustomerHistory = () => {
                   </div>
                   <div>{order.price} zł</div>
                   <div>
-                    {moment(new Date(order.date)).format("MMM do YYYY")}
+                    {moment(new Date(order.date)).format("dddd, MMMM Do YYYY")}
                   </div>
                 </article>
               );

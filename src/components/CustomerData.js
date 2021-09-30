@@ -50,7 +50,7 @@ const CustomerData = ({ setLoading, loading }) => {
     try {
       console.log("przzepre");
       const response = await axios.put(
-        `https://restaurant-site-backend.herokuapp.com/update/${id}`,
+        `https://restaurant-site-api.herokuapp.com/update/${id}`,
         {
           flatNumber,
           phone,

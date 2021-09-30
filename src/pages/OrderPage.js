@@ -70,6 +70,7 @@ const OrderPage = () => {
           dishes: orderedCard,
           price: totalValue,
           customer_id: userInfo.id,
+          date: new Date(),
           token: userInfo.accessToken,
         }
       );

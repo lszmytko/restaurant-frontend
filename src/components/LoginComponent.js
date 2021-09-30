@@ -10,12 +10,14 @@ const LoginComponent = () => {
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
   const { userInfo, setUserInfo } = useGlobalContext();
   const [loginSuccesful, setLoginSuccesful] = useState({});
+  const [loading, setLoading] = useState(false);
 
-  const { showLoginModal, setShowLoginModal, setLoading } = useLogRegContext();
+  const { showLoginModal, setShowLoginModal } = useLogRegContext();
 
   const handleLogIn = async (e) => {
     e.preventDefault();
     try {
+      setLoading(true);
       const response = await axios.post(
         "https://restaurant-site-api.herokuapp.com/users/login",
         {
@@ -43,11 +45,12 @@ const LoginComponent = () => {
         });
         setLoginSuccesful(true);
         setShowLoginModal(false);
-        setLoading(true);
+        setLoading(false);
       } else {
         setLoginSuccesful(false);
       }
     } catch (error) {
+      setLoading(false);
       console.log(error);
     }
   };
@@ -101,6 +104,7 @@ const LoginComponent = () => {
         <p className="login-fail">
           {!loginSuccesful && "Logowanie nie powiodło się"}
         </p>
+        <p className="login-loader">{loading && "Ładowanie..."}</p>
       </form>
     </Wrapper>
   );
@@ -160,6 +164,11 @@ const Wrapper = styled.div`
   .login-fail {
     text-align: center;
     color: red;
+  }
+
+  .login-loader {
+    color: green;
+    text-align: center;
   }
 
   @media screen and (min-width: 768px) {
