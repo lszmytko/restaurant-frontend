@@ -182,12 +182,12 @@ const RegisterComponent = () => {
           />
         </div>
         <div className="registration-input-div">
-          <label htmlFor="phone">Phone number</label>
+          <label htmlFor="phone">Telefon</label>
           <input
             type="text"
             name="phone"
             id="phone"
-            placeholder="Phone number"
+            placeholder="Telefon"
             value={phone}
             onChange={(e) => handlePhoneChange(e)}
           />
