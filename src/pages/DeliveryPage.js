@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Sidebar } from "../components/index";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   withScriptjs,
   withGoogleMap,
@@ -10,17 +10,17 @@ import {
 } from "react-google-maps";
 import { Footer } from "../components/index.js";
 import { deliveryHours, openingHours } from "../data/data.js";
+import { useGlobalContext } from "../context/context";
 
-const getTodayDeliveryHours = ()=>{
+const getTodayDeliveryHours = () => {
   const today = new Date().getDay() - 1;
-  return deliveryHours[today].hours
-}
+  return deliveryHours[today].hours;
+};
 
 const getTodayOpeningHours = () => {
   const today = new Date().getDay() - 1;
   return openingHours[today].hours;
 };
-
 
 const MyMapComponent = withScriptjs(
   withGoogleMap((props) => {
@@ -65,6 +65,13 @@ const MyMapComponent = withScriptjs(
 );
 
 export default function DeliveryPage() {
+  const { setIsSidebarOpen, isSidebarOpen } = useGlobalContext();
+
+  useEffect(() => {
+    if (isSidebarOpen) {
+      setIsSidebarOpen(false);
+    }
+  }, []);
   return (
     <Wrapper>
       <Sidebar />
@@ -119,14 +126,16 @@ const Wrapper = styled.section`
     line-height: 2;
     text-align: center;
   }
-  ${'' /* .hours {
+  ${
+    "" /* .hours {
     margin-bottom: 0.5rem;
-  } */}
+  } */
+  }
   .hours p {
     margin-bottom: 0.25rem;
   }
 
-  .hours-title{
+  .hours-title {
     font-weight: bold;
   }
 `;

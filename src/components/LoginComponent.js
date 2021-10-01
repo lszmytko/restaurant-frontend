@@ -12,7 +12,12 @@ const LoginComponent = () => {
   const [loginSuccesful, setLoginSuccesful] = useState({});
   const [loading, setLoading] = useState(false);
 
-  const { showLoginModal, setShowLoginModal } = useLogRegContext();
+  const {
+    showLoginModal,
+    setShowLoginModal,
+    setLogRegOption,
+    handleBackToChoice,
+  } = useLogRegContext();
 
   const handleLogIn = async (e) => {
     e.preventDefault();
@@ -101,6 +106,12 @@ const LoginComponent = () => {
         >
           Zaloguj
         </button>
+        <button
+          className="login_btn backtoChoice_btn"
+          onClick={(e) => handleBackToChoice()}
+        >
+          Wróć
+        </button>
         <p className="login-fail">
           {!loginSuccesful && "Logowanie nie powiodło się"}
         </p>
@@ -131,14 +142,6 @@ const Wrapper = styled.div`
     font-weight: 900;
   }
 
-  button:hover {
-  }
-
-  button:disabled {
-    cursor: auto;
-    background: var(--clr-primary-8);
-  }
-
   input {
     text-align: center;
     width: 48%;
@@ -154,12 +157,30 @@ const Wrapper = styled.div`
     margin-bottom: 1rem;
   }
 
+  // BUTTONS
+
   .login_btn {
     width: 100%;
     border-radius: var(--radius);
     padding: 0.5rem;
     margin-top: 0.5rem;
+    background: var(--clr-primary-5);
+    cursor: pointer;
+    border: 0.25rem solid var(--clr-primary-4);
+    font-weight: 900;
   }
+
+  .login_btn:disabled {
+    cursor: auto;
+    background: var(--clr-primary-8);
+  }
+
+  .backtoChoice_btn {
+    background: #fffd95;
+    border-color: #fffd95;
+  }
+
+  // END OF BUTTONS
 
   .login-fail {
     text-align: center;

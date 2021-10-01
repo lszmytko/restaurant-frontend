@@ -11,11 +11,23 @@ const DELIVERY_PRICE = 5;
 
 // Products shown just before ordering on order page
 const OrderPage = () => {
-  const { orderedCard, setOrderedCard, userInfo } = useGlobalContext();
+  const {
+    orderedCard,
+    setOrderedCard,
+    userInfo,
+    setIsSidebarOpen,
+    isSidebarOpen,
+  } = useGlobalContext();
   const [finalInfoShown, setFinalInfoshown] = useState(false);
   const [totalValue, setTotalValue] = useState(0);
   const { showLoginModal, setShowLoginModal, loading, setLoading } =
     useLogRegContext();
+
+  useEffect(() => {
+    if (isSidebarOpen) {
+      setIsSidebarOpen(false);
+    }
+  }, []);
 
   const removeFromEndBasket = (e) => {
     setOrderedCard((prevCard) => {

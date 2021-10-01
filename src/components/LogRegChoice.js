@@ -1,17 +1,22 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useLogRegContext } from "../context/logregcontext";
 
-const LogRegChoice = ({ logOption, setLogOption }) => {
+// Component to choose whether client wants to log in or
+
+const LogRegChoice = () => {
+  const { LogRegOption, setLogRegOption } = useLogRegContext();
+
   const handleLogChoice = (e) => {
     e.preventDefault();
-    setLogOption({
+    setLogRegOption({
       choice: "login",
     });
   };
 
   const handleRegChoice = (e) => {
     e.preventDefault();
-    setLogOption({
+    setLogRegOption({
       choice: "register",
     });
   };

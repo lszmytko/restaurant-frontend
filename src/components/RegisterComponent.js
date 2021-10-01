@@ -20,7 +20,13 @@ const RegisterComponent = () => {
 
   const { userInfo, setUserInfo } = useGlobalContext();
 
-  const { setShowLoginModal, setLoading } = useLogRegContext();
+  const {
+    setShowLoginModal,
+    setLoading,
+    loading,
+    setLogRegOption,
+    handleBackToChoice,
+  } = useLogRegContext();
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -52,10 +58,12 @@ const RegisterComponent = () => {
 
   const handleRegister = async (e) => {
     e.preventDefault();
+    //Reset error
     setError({
       password: "",
       other: "",
       callToApi: "",
+      email: "",
     });
 
     if (!name || !lastName || !email || !street || !flatNumber || !phone) {
@@ -70,6 +78,7 @@ const RegisterComponent = () => {
     }
 
     try {
+      setLoading(true);
       const response = await axios.post(
         "https://restaurant-site-api.herokuapp.com/users/register",
         {
@@ -82,15 +91,23 @@ const RegisterComponent = () => {
           password,
         }
       );
+      if (response.data.ifEmailExists) {
+        setError((prevError) => {
+          return { ...prevError, email: "Email already exists" };
+        });
+      }
       console.log(response);
-      setShowLoginModal(false);
-      setLoading(true);
+      setLogRegOption({
+        choice: "before",
+      });
+      setLoading(false);
     } catch (error) {
       setError({
         ...error,
         callToApi: "Ups! Coś poszło nie tak!",
       });
       console.log("register error", error);
+      setLoading(false);
     }
   };
 
@@ -183,10 +200,19 @@ const RegisterComponent = () => {
           >
             Zarejestruj się
           </button>
+          <button
+            className=" btn backtoChoice_btn"
+            type="submit"
+            onClick={(e) => handleBackToChoice(e)}
+          >
+            Wróć
+          </button>
         </div>
         {error.password && <p className="error-message">{error.password}</p>}
         {error.other && <p className="error-message">{error.other}</p>}
         {error.callToApi && <p className="error-message">{error.callToApi}</p>}
+        {error.email && <p className="error-message">{error.email}</p>}
+        {loading && <p>Loading...</p>}
       </form>
     </Wrapper>
   );
@@ -221,6 +247,13 @@ const Wrapper = styled.div`
 
   .registration-btn {
     width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .backtoChoice_btn {
+    background: #fffd95;
+    border-color: #fffd95;
+    width: 100%;
   }
 
   @media screen and (min-width: 768px) {
@@ -228,6 +261,12 @@ const Wrapper = styled.div`
       padding-top: 1rem;
       padding-bottom: 1rem;
       border-radius: 1rem;
+    }
+
+    .backtoChoice_btn {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      border-radius: 0.75rem;
     }
   }
 `;

@@ -9,11 +9,11 @@ const CustomerData = ({ setLoading, loading }) => {
   const { userInfo } = useGlobalContext();
 
   const [flatNumber, setFlatNumber] = useState("");
-  const [phone, setPhone] = useState(phone);
-  const [name, setName] = useState(name);
-  const [lastName, setLastName] = useState(lastName);
-  const [street, setStreet] = useState(street);
-  const [id, setId] = useState(id);
+  const [phone, setPhone] = useState("");
+  const [name, setName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [street, setStreet] = useState("");
+  const [id, setId] = useState("");
   const [error, setError] = useState({
     message: "",
   });

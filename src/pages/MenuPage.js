@@ -12,7 +12,6 @@ import { useGlobalContext } from "../context/context.js";
 import { useEffect } from "react";
 import React from "react";
 
-
 const MenuPage = () => {
   const {
     isAddedModalOpen,
@@ -23,7 +22,15 @@ const MenuPage = () => {
     setDishesDisplayed,
     filterCriteria,
     filterDishes,
+    setIsSidebarOpen,
+    isSidebarOpen,
   } = useGlobalContext();
+
+  useEffect(() => {
+    if (isSidebarOpen) {
+      setIsSidebarOpen(false);
+    }
+  }, []);
 
   useEffect(() => {
     filterDishes(dishes, dishesDisplayed);

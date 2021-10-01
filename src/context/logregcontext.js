@@ -1,14 +1,21 @@
 import React, { useState, useContext } from "react";
 import { useGlobalContext } from "./context";
 
-
 const LogRegContext = React.createContext();
 
 const LogRegContextProvider = ({ children }) => {
-  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(true);
   const [loading, setLoading] = useState(false);
+  const [logRegOption, setLogRegOption] = useState({
+    choice: "before",
+  });
 
-  const {userInfo} = useGlobalContext()
+  const handleBackToChoice = (e) => {
+    e.preventDefault();
+    setLogRegOption({
+      choice: "before",
+    });
+  };
 
   return (
     <LogRegContext.Provider
@@ -16,7 +23,10 @@ const LogRegContextProvider = ({ children }) => {
         showLoginModal,
         setShowLoginModal,
         loading,
-        setLoading
+        setLoading,
+        logRegOption,
+        setLogRegOption,
+        handleBackToChoice,
       }}
     >
       {children}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { LoginModal, Sidebar } from "../components";
 import CustomerData from "../components/CustomerData";
@@ -12,6 +12,14 @@ const CustomerPage = () => {
   // info about user - whether he is logged in , name etc.
   const { userInfo } = useGlobalContext();
   const [loading, setLoading] = useState(false);
+
+  const { setIsSidebarOpen, isSidebarOpen } = useGlobalContext();
+
+  useEffect(() => {
+    if (isSidebarOpen) {
+      setIsSidebarOpen(false);
+    }
+  }, []);
 
   return (
     <Wrapper>
