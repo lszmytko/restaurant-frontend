@@ -10,6 +10,7 @@ const LogRegContextProvider = ({ children }) => {
     choice: "before",
   });
 
+  // Back to choice between login or register
   const handleBackToChoice = (e) => {
     e.preventDefault();
     setLogRegOption({

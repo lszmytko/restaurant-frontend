@@ -85,7 +85,7 @@ const Wrapper = styled.aside`
   .basket {
     position: fixed;
     right: 2rem;
-    top: 1.25rem;
+    top: 0.875rem;
     color: var(--clr-primary-3);
     font-size: 2rem;
     cursor: pointer;
