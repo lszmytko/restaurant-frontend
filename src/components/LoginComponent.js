@@ -68,6 +68,7 @@ const LoginComponent = () => {
     setPassword(e.target.value);
   };
 
+  // Disable button when no value or shorter than 8
   useEffect(() => {
     if (email.length && password.length && password.length >= 8) {
       setIsButtonDisabled(false);
@@ -108,7 +109,8 @@ const LoginComponent = () => {
         </button>
         <button
           className="login_btn backtoChoice_btn"
-          onClick={(e) => handleBackToChoice()}
+          onClick={(e) => handleBackToChoice(e)}
+          type="submit"
         >
           Wróć
         </button>

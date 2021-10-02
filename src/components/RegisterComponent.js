@@ -92,9 +92,12 @@ const RegisterComponent = () => {
         }
       );
       if (response.data.ifEmailExists) {
+        setLoading(false);
         setError((prevError) => {
           return { ...prevError, email: "Email already exists" };
         });
+        // To stop the else of the fucntion
+        return;
       }
       console.log(response);
       setLogRegOption({
@@ -113,7 +116,7 @@ const RegisterComponent = () => {
 
   return (
     <Wrapper>
-      <form action="/" className="registration-form">
+      <form className="registration-form">
         <h2 className="registration-header">Rejestracja</h2>
         <div className="registration-input-div">
           <label htmlFor="name">Imię</label>
@@ -212,7 +215,7 @@ const RegisterComponent = () => {
         {error.other && <p className="error-message">{error.other}</p>}
         {error.callToApi && <p className="error-message">{error.callToApi}</p>}
         {error.email && <p className="error-message">{error.email}</p>}
-        {loading && <p>Loading...</p>}
+        {loading && <p className="error-message">Loading...</p>}
       </form>
     </Wrapper>
   );
@@ -257,6 +260,17 @@ const Wrapper = styled.div`
   }
 
   @media screen and (min-width: 768px) {
+    .registration-form {
+      width: 500px;
+      display: grid;
+      grid-templete-columns: 1fr 1fr;
+      // grid-template-rows:
+    }
+
+    .registration-form label {
+      width: 5rem;
+    }
+
     .registration-btn {
       padding-top: 1rem;
       padding-bottom: 1rem;
