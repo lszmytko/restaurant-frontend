@@ -222,7 +222,7 @@ const OrderPage = () => {
               </button>
             </div>
           )}
-          {showLoginModal && <LoginModal />}
+          {!userInfo && <LoginModal />}
         </section>
       </div>
     </Wrapper>
