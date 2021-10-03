@@ -222,7 +222,7 @@ const OrderPage = () => {
               </button>
             </div>
           )}
-          {!userInfo && <LoginModal />}
+          {!userInfo.isLogged && <LoginModal />}
         </section>
       </div>
     </Wrapper>
