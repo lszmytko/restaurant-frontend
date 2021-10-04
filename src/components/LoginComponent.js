@@ -45,9 +45,9 @@ const LoginComponent = () => {
           email,
           flatNumber: flatnumber,
           lastName: lastname,
-          accessToken: jwtToken.token,
           isLogged: true,
         });
+        localStorage.setItem("token", jwtToken.token);
         setLoginSuccesful(true);
         setShowLoginModal(false);
         setLoading(false);

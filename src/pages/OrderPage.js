@@ -84,6 +84,11 @@ const OrderPage = () => {
           customer_id: userInfo.id,
           date: new Date(),
           token: userInfo.accessToken,
+        },
+        {
+          headers: {
+            "x-access-token": localStorage.getItem("token"),
+          },
         }
       );
       console.log("response data", response.data);

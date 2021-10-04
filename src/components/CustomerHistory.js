@@ -22,8 +22,14 @@ const CustomerHistory = () => {
         {
           token: accessToken,
           id,
+        },
+        {
+          headers: {
+            "x-access-token": localStorage.getItem("token"),
+          },
         }
       );
+      console.log("response", response);
       // parse the json of the dishes returned
       const finalResponse = response.data.message.map((element) => {
         return { ...element, dishes: JSON.parse(element.dishes)[0] };
