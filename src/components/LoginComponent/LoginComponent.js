@@ -79,9 +79,7 @@ const LoginComponent = () => {
     } else if (!isButtonDisabled && (password.length < 8 || !email.length)) {
       setIsButtonDisabled(true);
     }
-  }, [email, password]);
-
-  
+  }, [email, password]);  
 
   return (
     <LoginComponentPres

@@ -434,6 +434,10 @@
   padding: 0.5rem;
 }
 
+.CustomerHistory .container .loading {
+  text-align: center;
+}
+
 .CustomerHistory input::-webkit-input-placeholder {
   color: grey;
 }
@@ -726,6 +730,7 @@
 .FrontImage .photo {
   height: calc(100vh - 100px);
   position: relative;
+  background: yellow;
 }
 
 .FrontImage .photo h1,

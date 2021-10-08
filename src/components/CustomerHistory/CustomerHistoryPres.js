@@ -6,6 +6,11 @@ const CustomerHistoryPres = ({ historyLoaded, ordersInfo }) => {
     <div className="CustomerHistory">
       <h3>Ostatnie zamówienia</h3>
 
+      {!historyLoaded && 
+        <div className="container">
+          <p className="loading">Loading...</p>
+        </div>
+      }
       {historyLoaded && (
         <div className="container">
           <div className="order-headers">

@@ -1,13 +1,11 @@
-import styled from "styled-components";
-
 import { useEffect, useState } from "react";
 import React from "react";
 import FrontImagePres from "./FrontImagePres";
-import schabowy from "../../images/frontSlider/schabowy.jpg";
+import salad from "../../images/frontSlider/salad.jpg";
 import bolognese from "../../images/frontSlider/bolognese.jpg";
 import pierogi from "../../images/frontSlider/pierogi.jpg";
 
-const slides = [schabowy, bolognese, pierogi];
+const slides = [salad, bolognese, pierogi];
 
 const FrontImage = () => {
   const [activeSlide, setActiveSlide] = useState(0);

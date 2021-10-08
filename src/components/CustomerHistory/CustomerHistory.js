@@ -46,7 +46,7 @@ const CustomerHistory = () => {
   // On mount add order history to the state
   useEffect(() => {
     getHistory();
-    console.log("opdated history");
+    console.log("updated history");
   }, []);
   return (
     <CustomerHistoryPres

@@ -3,10 +3,10 @@
 
 .FrontImage {
   margin-top: 100px;
-
   .photo {
     @include calc(height, "100vh - 100px");
     position: relative;
+    background: yellow;
 
     h1,
     h2 {
