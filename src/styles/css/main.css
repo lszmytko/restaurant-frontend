@@ -19,7 +19,10 @@
   border-radius: 0.5rem;
   width: 100%;
   margin: 2rem auto;
-  min-width: 20rem;
+  min-width: 15rem;
+  height: 20rem;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .About h2 {
@@ -37,12 +40,6 @@
 .About .description p {
   letter-spacing: 0.2rem;
   padding-bottom: 1rem;
-}
-
-.About .restaurant {
-  height: 20rem;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 @media screen and (min-width: 992px) {
@@ -967,7 +964,11 @@
   text-align: center;
   border-radius: 0.5rem;
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.MainInfo .info:last-child {
+  margin-bottom: 0;
 }
 
 .MainInfo .info-title {
@@ -1020,8 +1021,9 @@
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .info {
+  .MainInfo .info {
     min-width: 300px;
+    margin-bottom: 0;
   }
 }
 
@@ -1674,7 +1676,7 @@ button {
 }
 
 .underline {
-  width: 15rem;
+  width: 12rem;
   height: 0.375rem;
   background: #00c2cc;
   margin: 0 auto 1rem;
@@ -1767,6 +1769,9 @@ label {
 @media screen and (min-width: 576px) {
   .title h2 {
     font-size: 1.75rem;
+  }
+  .underline {
+    width: 15rem;
   }
 }
 
