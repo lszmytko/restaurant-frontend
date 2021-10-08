@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Basket, Sidebar} from "../index";
 import React from "react";
@@ -7,7 +6,7 @@ import { useGlobalContext } from "../../context/context";
 
 const Navigation = ()=> {
   return (
-    <nav className="main-nav">
+    <nav className="Navigation">
       <div className="nav-container section-center">
         <ul className="pages">
           <li className="page">
@@ -30,73 +29,5 @@ const Navigation = ()=> {
     </nav>
   );
 };
-
-const Wrapper = styled.nav`
-.mai
-  z-index: 1;
-  box-shadow: 4px 4px 12px var(--clr-primary-3);
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  background: var(--clr-white);
-
-  .nav-container {
-    display: flex;
-    align-items: center;
-    padding: 0 2rem;
-    height: 100px;
-  }
-
-  .pages {
-    display: none;
-  }
-
-  .pages li a {
-    color: var(--clr-primary-3);
-    font-weight: bold;
-  }
-
-  .pages li a:hover {
-    color: var(--clr-primary-5);
-  }
-  
-  .page {
-    text-transform: uppercase;
-  }
-
-  .page h2 {
-    cursor: pointer;
-  }
-
-  .nav-sidebar {
-    position: static;
-  }
-
-  @media screen and (min-width: 768px) {
-    .nav-container {
-      padding: 0;
-      width: 98%;
-      margin: 0 auto;
-    }
-
-    .logo-div {
-      width: 4rem;
-      display: block;
-    }
-
-    .pages {
-      display: flex;
-      justify-content: space-between;
-      color: getPrimaryColor(clr-primary-5);
-      font-size: 1.25rem;
-      width: 100%;
-    }
-
-  }
-
-  @media screen and (min-width: 992px) {
-  }
-`;
 
 export default Navigation;

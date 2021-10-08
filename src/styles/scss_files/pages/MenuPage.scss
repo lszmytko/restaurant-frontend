@@ -1,0 +1,31 @@
+@import "../variables";
+
+.MenuPage {
+  min-height: 100vh;
+  background: $clr-primary-10;
+  .section-menu {
+    margin-bottom: 1rem;
+  }
+  .section-menu img {
+    height: 15rem;
+    object-fit: cover;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .MenuPage {
+    .section-menu {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem 1rem;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .MenuPage {
+    .section-menu {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+}

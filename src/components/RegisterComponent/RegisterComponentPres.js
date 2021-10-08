@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 
 const RegisterComponentPres = ({
   name,
@@ -22,7 +21,7 @@ const RegisterComponentPres = ({
   loading,
 }) => {
   return (
-    <Wrapper>
+    <div className="RegisterComponent">
       <form className="registration-form">
         <h2 className="registration-header">Rejestracja</h2>
         <div className="registration-input-div">
@@ -128,78 +127,8 @@ const RegisterComponentPres = ({
         {error.isPhone && <p className="error-message">{error.isPhone}</p>}
         {loading && <p className="error-message">Loading...</p>}
       </form>
-    </Wrapper>
+    </div>
   );
 };
-
-const Wrapper = styled.div`
-  .registration-form {
-    // background: red;
-  }
-
-  .registration-input-div {
-    display: flex;
-    width: 100%;
-    margin-bottom: 1rem;
-  }
-
-  .registration-input-div input {
-    flex-grow: 1;
-    margin-left: 1rem;
-  }
-
-  .registration-header {
-    text-align: center;
-    margin-bottom: 1.5rem;
-  }
-
-  .error-message {
-    color: red;
-    margin-top: 1rem;
-    text-align: center;
-  }
-
-  .registration-btn {
-    width: 100%;
-    margin-bottom: 1rem;
-  }
-
-  .backtoChoice_btn {
-    background: #fffd95;
-    border-color: #fffd95;
-    width: 100%;
-  }
-
-  @media screen and (min-width: 768px) {
-    .registration-form {
-      width: 500px;
-      display: grid;
-      grid-templete-columns: 1fr 1fr;
-      // grid-template-rows:
-    }
-
-    .registration-form label {
-      width: 5rem;
-    }
-
-    .registration-btn {
-      padding-top: 1rem;
-      padding-bottom: 1rem;
-      border-radius: 1rem;
-    }
-
-    .backtoChoice_btn {
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
-      border-radius: 0.75rem;
-    }
-
-    .registration-input-div {
-      display: flex;
-      width: 100%;
-      margin-bottom: 0.75rem;
-    }
-  }
-`;
 
 export default RegisterComponentPres;

@@ -1,9 +1,8 @@
 import React from "react";
-import styled from "styled-components";
 
 const Footer = () => {
   return (
-    <Wrapper>
+    <section className="Footer">
       <footer className="footer section-center">
         <div className="social-links">
           <a href="https://facebook.com">
@@ -21,40 +20,9 @@ const Footer = () => {
         </div>
         <h3>&copy; best restaurant 2021</h3>
       </footer>
-    </Wrapper>
+    </section>
   );
 };
 
-const Wrapper = styled.section`
-  background: black;
-  padding: 2rem 0;
-
-  .social-links {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2rem;
-    font-size: 1rem;
-  }
-
-  .social-links a{
-    margin-right: 2rem;
-    transition: var(--transition);
-    color: var(--clr-primary-5);
-  }
-
-  .social-links a:hover {
-    color: var(--clr-primary-10);
-  }
-
-  h3 {
-    text-align: center;
-  }
-
-  @media screen and (min-width: 768px){
-      .social-links{
-          font-size: 2rem;
-      }
-  }
-`;
 
 export default Footer;

@@ -1,0 +1,27 @@
+@import "../variables";
+
+.LogOut {
+  position: fixed;
+  right: 1rem;
+  top: 1.5rem;
+
+  a {
+    color: $clr-primary-4;
+    transition: $transition;
+    font-size: 1rem;
+    font-weight: bold;  
+
+    &:hover {
+      color: $clr-primary-1;
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (min-width:768px){
+    .LogOut{
+        a{
+            font-size: 1.25rem;
+        }
+    }
+}

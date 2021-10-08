@@ -1,5 +1,3 @@
-import styled from "styled-components";
-
 import { dishes } from "../../data/data";
 import { useGlobalContext } from "../../context/context.js";
 import { useEffect } from "react";

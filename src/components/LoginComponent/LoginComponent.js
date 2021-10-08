@@ -37,16 +37,19 @@ const LoginComponent = () => {
       const jwtToken = response.data.jwtToken;
       if (Object.keys(userData).length) {
         const { id, name, lastname, flatnumber, phone, street } = userData;
-        setUserInfo({
-          id,
-          name,
-          phone,
-          street,
-          email,
-          flatNumber: flatnumber,
-          lastName: lastname,
-          isLogged: true,
+        setUserInfo((prevUser) => {
+          return {
+            id,
+            name,
+            phone,
+            street,
+            email,
+            flatNumber: flatnumber,
+            lastName: lastname,
+            isLogged: true,
+          };
         });
+
         localStorage.setItem("token", jwtToken.token);
         setLoginSuccesful(true);
         setShowLoginModal(false);
@@ -77,6 +80,8 @@ const LoginComponent = () => {
       setIsButtonDisabled(true);
     }
   }, [email, password]);
+
+  
 
   return (
     <LoginComponentPres

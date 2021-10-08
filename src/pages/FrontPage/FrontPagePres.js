@@ -12,7 +12,7 @@ import MainInfo from "../../components/MainInfo/MainInfo.js";
 
 const FrontPagePres = () => {
   return (
-    <div>
+    <div className="FrontPage">
       <Sidebar smallScreenVisibility={"smallScreenVisibility"} />
       <Basket />
       <Navigation />

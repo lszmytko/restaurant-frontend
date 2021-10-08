@@ -1,0 +1,68 @@
+@import "../variables";
+
+.CustomerData {
+  margin-bottom: 2rem;
+  
+  form {
+    text-align: center;
+  }
+
+  input {
+    border-radius: $radius;
+    padding: 0.25rem;
+    height: 2rem;
+    text-align:center;
+
+    &:focus {
+      border: 0.25rem solid $clr-primary-5;
+      border-radius: $radius;
+      outline: none;
+    }
+
+    &:placeholder {
+      color: red;
+    }
+  }
+
+  label {
+    margin-bottom: 0.5rem;
+  }
+
+  h3 {
+    text-align: center;
+  }
+
+  .inputDiv {
+    padding: 0.5rem 0;
+    display: grid;
+  }
+
+  button {
+    margin-top: 1rem;
+    padding: 1rem 0.5rem;
+    width: 100%;
+  }
+
+  .form-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  form {
+    width: 90%;
+  }
+
+  .loading {
+    text-align: center;
+    color: red;
+  }
+
+  .updated {
+    text-align: center;
+    color: green;
+  }
+
+  .btn-update {
+    margin-bottom: 1rem;
+  }
+}

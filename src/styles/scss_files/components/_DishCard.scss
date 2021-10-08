@@ -1,0 +1,29 @@
+@import "../variables";
+
+.DishCard {
+  background: $clr-primary-10;
+  text-align: center;
+  transition: all 0.5s linear;
+  .cardInfo {
+    padding: 1rem 0.25rem;
+  }
+
+  .cardInfo_options {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .cardInfo_choice button:nth-child(1) {
+    margin-right: 0.5rem;
+  }
+
+  .plus-minus-button {
+    cursor: pointer;
+
+    &:disabled{
+      cursor: auto;
+    }
+  }
+
+}

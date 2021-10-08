@@ -59,6 +59,7 @@ const DishCard = ({ image, price, name }) => {
       visible={visible}
       addToBasket={addToBasket}
       element={element}
+      quantity={quantity}
     />
   );
 };

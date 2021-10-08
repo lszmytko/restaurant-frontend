@@ -4,12 +4,15 @@ import React, { useEffect, useState, useRef } from "react";
 import FilterPres from "./FilterPres";
 
 const Filter = () => {
+
+  // Getting array of prices
   const prices = dishes
     .map((dish) => {
       return dish.price;
     })
     .sort();
 
+  // Getting array of cuisines
   const cuisines = Array.from(
     new Set(
       dishes.map((dish) => {
@@ -96,17 +99,24 @@ const Filter = () => {
 
   // END OF STARTING USEFFECT
 
+
+  // Rangebar:after width
+  const calculatedWidth = ((value - min) / (max-min)) * 100 + "%";
+  const calculatedWidthStyle = {"--width" : calculatedWidth}
+
   return (
     <FilterPres
       value={value}
       min={min}
       max={max}
+      calculatedWidthStyle={calculatedWidthStyle}
       setPriceCriteria={setPriceCriteria}
       cuisines={cuisines}
       setCuisineCriteria={setCuisineCriteria}
       setFriedCriteria={setFriedCriteria}
       yesRadio={yesRadio}
       noRadio={noRadio}
+      style={calculatedWidthStyle}
     />
   );
 };

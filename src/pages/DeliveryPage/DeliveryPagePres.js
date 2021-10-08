@@ -1,11 +1,10 @@
 import React from "react";
-import styled from "styled-components";
 import { Footer, Sidebar } from "../../components/index";
 import MyMapComponent from "../../components/MyMapComponent/MyMapComponent";
 
-const DeliveryPagePres = ({getTodayOpeningHours, getTodayDeliveryHours}) => {
+const DeliveryPagePres = ({ getTodayOpeningHours, getTodayDeliveryHours }) => {
   return (
-    <Wrapper>
+    <section className="DeliveryPage">
       <Sidebar />
       <header className="title">
         <h1>obszary dostawy</h1>
@@ -43,28 +42,8 @@ const DeliveryPagePres = ({getTodayOpeningHours, getTodayDeliveryHours}) => {
         />
       </div>
       <Footer />
-    </Wrapper>
+    </section>
   );
 };
-
-const Wrapper = styled.section`
-  background: var(--clr-primary-10);
-  .info {
-    width: 60%;
-    margin: 2rem auto;
-  }
-
-  .info p {
-    line-height: 2;
-    text-align: center;
-  }
-  .hours p {
-    margin-bottom: 0.25rem;
-  }
-
-  .hours-title {
-    font-weight: bold;
-  }
-`;
 
 export default DeliveryPagePres;

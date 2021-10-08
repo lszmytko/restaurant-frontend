@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 
 const CustomerDataPres = ({
   name,
@@ -18,7 +17,7 @@ const CustomerDataPres = ({
   isDataChanged,
 }) => {
   return (
-    <Wrapper>
+    <section className="CustomerData">
       <h3>Twoje dane</h3>
       <div className="form-container">
         <form action="">
@@ -81,71 +80,8 @@ const CustomerDataPres = ({
       {isDataChanged ? (
         <p className="updated">Dane zostały zaktualizowane</p>
       ) : null}
-    </Wrapper>
+    </section>
   );
 };
-
-const Wrapper = styled.section`
-  form {
-    text-align: center;
-  }
-
-  input {
-    border-radius: var(--radius);
-    padding: 0.25rem;
-    height: 2rem;
-  }
-  input:focus {
-    border: 0.25rem solid var(--clr-primary-5);
-    border-radius: var(--radius);
-    outline: none;
-  }
-
-  label {
-    margin-bottom: 0.5rem;
-  }
-
-  h3 {
-    text-align: center;
-  }
-
-  .inputDiv {
-    padding: 0.5rem 0;
-    display: grid;
-  }
-
-  button {
-    margin-top: 1rem;
-    padding: 1rem 0.5rem;
-    width: 100%;
-  }
-
-  .form-container {
-    display: flex;
-    justify-content: center;
-  }
-
-  form {
-    width: 90%;
-  }
-
-  .loading {
-    text-align: center;
-    color: red;
-  }
-
-  .updated {
-    text-align: center;
-    color: green;
-  }
-
-  .btn-update {
-    margin-bottom: 1rem;
-  }
-
-  input:placeholder {
-    color: red;
-  }
-`;
 
 export default CustomerDataPres;

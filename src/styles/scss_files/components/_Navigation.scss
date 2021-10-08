@@ -1,0 +1,67 @@
+@import "../_functions";
+@import "../variables";
+
+.Navigation {
+  z-index: 1;
+  box-shadow: 4px 4px 12px getPrimaryColor(clr-primary-3);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background: $clr-primary-10;
+
+  .nav-container {
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    height: 100px;
+  }
+
+  .pages {
+    display: none;
+  }
+
+  .pages li a {
+    color: $clr-primary-3;
+    font-weight: bold;
+  }
+
+  .pages li a:hover {
+    color: $clr-primary-5;
+  }
+
+  .page {
+    text-transform: uppercase;
+  }
+
+  .page h2 {
+    cursor: pointer;
+  }
+
+  .nav-sidebar {
+    position: static;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .Navigation {
+    .nav-container {
+      padding: 0;
+      width: 98%;
+      margin: 0 auto;
+    }
+
+    .logo-div {
+      width: 4rem;
+      display: block;
+    }
+
+    .pages {
+      display: flex;
+      justify-content: space-between;
+      color: $clr-primary-5;
+      font-size: 1.25rem;
+      width: 100%;
+    }
+  }
+}

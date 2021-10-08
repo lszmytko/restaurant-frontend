@@ -16,35 +16,50 @@ const AppContextProvider = ({ children }) => {
   const [dishesDisplayed, setDishesDisplayed] = useState(dishes);
   const [isBasketOpen, setIsBasketOpen] = useState(false);
   const [userInfo, setUserInfo] = useState({
-    userId: '',
+    userId: "",
     isLogged: false,
-    name: '',
-    email: '',
-    password: '',
-    flatnumber: '',
-    phone: '',
-    accessToken: ''
-  })
+    name: "",
+    email: "",
+    password: "",
+    flatnumber: "",
+    phone: "",
+  });
 
   // END OF STATES
 
   // STARTING USEEFFECT
 
-  useEffect(() => {
-    if (card.length > 0) {
-      localStorage.clear();
-      localStorage.setItem("card", JSON.stringify(card));
-    }
-  }, [card]);
+    useEffect(() => {
+      if (card.length > 0) {
+        localStorage.removeItem("card");
+        localStorage.setItem("card", JSON.stringify(card));
+      }
+    }, [card]);
+
+    useEffect(() => {
+      // localStorage.remove();
+      localStorage.setItem("orderedCard", JSON.stringify(orderedCard));
+    }, [orderedCard]);
 
   useEffect(() => {
-    localStorage.clear();
-    localStorage.setItem("orderedCard", JSON.stringify(orderedCard));
-  }, [orderedCard]);
+    // console.log(JSON.parse(localStorage.getItem("user")));
+    // console.log(Boolean(JSON.parse(localStorage.getItem("user"))) == true)
+    if (Boolean(localStorage.getItem("user"))) {
+      console.log('okiki')
+      const user = JSON.parse(localStorage.getItem("user"));
+      setUserInfo(user);
+    }
+  }, []);
+
+  // useEffect(() => {
+  //   if (userInfo.isLogged) {
+  //     localStorage.setItem("user", JSON.stringify(userInfo));
+  //   }
+  // }, [userInfo]);
 
   // end of starting useeffect
 
-  // Add to basket functions 
+  // Add to basket functions
 
   const addToBasket = (data) => {
     // wyciagniecie produktow
@@ -73,7 +88,7 @@ const AppContextProvider = ({ children }) => {
     setIsAddedModalOpen(true);
   };
 
-  // Basket remove functions 
+  // Basket remove functions
 
   const removeFromBasket = (e) => {
     setCard((prevCard) => {
@@ -82,8 +97,6 @@ const AppContextProvider = ({ children }) => {
       });
     });
   };
-
-  
 
   const filterDishes = (dishes, currentDishes) => {
     let currentFilteredArray = currentDishes.filter((dish) => {
@@ -145,7 +158,7 @@ const AppContextProvider = ({ children }) => {
         orderedCard,
         setOrderedCard,
         userInfo,
-        setUserInfo
+        setUserInfo,
       }}
     >
       {children}

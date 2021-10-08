@@ -1,9 +1,8 @@
 import React from "react";
 import Modal from "react-modal";
-import styled from "styled-components";
 import { LogReg } from "..";
 
-const LoginModalPres = ({isOpen}) => {
+const LoginModalPres = ({ isOpen }) => {
   return (
     <Modal
       isOpen={isOpen}
@@ -13,7 +12,7 @@ const LoginModalPres = ({isOpen}) => {
           left: "5%",
           right: "5%",
           bottom: "5%",
-          background: "var(--clr-primary-9)",
+          background: "hsl(183, 100%, 90%)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -21,35 +20,12 @@ const LoginModalPres = ({isOpen}) => {
         },
       }}
     >
-      <Wrapper2>
-        <Wrapper>
-          <LogReg />
-        </Wrapper>
-      </Wrapper2>
+      <div className="LoginModalContainer">
+        <LogReg />
+      </div>
     </Modal>
   );
 };
 
-const Wrapper = styled.div`
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  // height: 100%;
-  // text-align: center;
-`;
-
-const Wrapper2 = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  i {
-    position: absolute;
-    right: 0;
-    top: 0;
-    font-size: 3rem;
-    cursor: pointer;
-  }
-`;
 
 export default LoginModalPres;

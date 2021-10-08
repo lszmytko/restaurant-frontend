@@ -1,0 +1,35 @@
+@import "../variables";
+
+.Footer {
+  background: black;
+  padding: 2rem 0;
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+
+    a {
+      margin-right: 2rem;
+      transition: $transition;
+      color: $clr-primary-5;
+
+      &:hover{
+        color: $clr-primary-10;
+      }
+    }
+  }
+
+  h3 {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .Footer {
+    .social-links {
+      font-size: 2rem;
+    }
+  }
+}

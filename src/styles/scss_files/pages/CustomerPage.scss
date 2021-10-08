@@ -1,0 +1,33 @@
+@import "../variables";
+
+.CustomerPage {
+  background: $clr-primary-10;
+  display: flex;
+  justify-content: center;
+  .userInfoContainer {
+    display: grid;
+    row-gap: 2rem;
+    min-width: 300px;
+    max-width: 400px;
+    background: $clr-primary-9;
+    border-radius: 2rem;
+    padding: 2rem 0;
+  }
+
+  h1 {
+    text-align: center;
+    padding: 2rem 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .CustomerPage {
+    .userInfoContainer {
+      max-width: 1176px;
+      grid-template-columns: 1fr 1fr;
+      margin: 0 auto;
+      column-gap: 10rem;
+      padding: 2rem;
+    }
+  }
+}

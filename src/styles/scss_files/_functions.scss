@@ -1,5 +1,2 @@
 @import './variables';
 
-@function getPrimaryColor($color) {
-    @return map-get($primary-colors, $color);
-}

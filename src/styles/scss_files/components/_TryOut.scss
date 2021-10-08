@@ -1,0 +1,31 @@
+@import "../variables";
+
+.TryOut {
+  text-transform: uppercase;
+  h2 {
+    margin: 0 auto 2rem;
+    width: 300px;
+    text-align: center;
+  }
+  .order {
+    background: $main;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 25px;
+    margin: 1rem auto;
+    display: block;
+    padding: 1.25rem 1rem;
+    transition: $transition;
+
+    &:hover {
+      background: $main-lighter;
+    }
+
+    a {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: $clr-grey-3;
+      letter-spacing: $spacing;
+    }
+  }
+}

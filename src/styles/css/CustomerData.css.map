@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACaE,wBAAwB;AAExB,qCAAqC;AAarC,8BAA8B",
+    "sources": [
+        "../scss_files/components/CustomerData.scss",
+        "../scss_files/_variables.scss"
+    ],
+    "names": [],
+    "file": "CustomerData.css"
+}

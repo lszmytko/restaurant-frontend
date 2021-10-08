@@ -1,12 +1,11 @@
 import React from "react";
-import styled from "styled-components";
 import AddedItemModal from "../../components/AddedItemModal/AddedItemModal";
 import DishCard from "../../components/DishCard/DishCard";
 import { Filter, Sidebar, Basket } from "../../components/index";
 
-const MenuPagePres = ({dishesDisplayed, isAddedModalOpen}) => {
+const MenuPagePres = ({ dishesDisplayed, isAddedModalOpen }) => {
   return (
-    <Wrapper>
+    <section className="MenuPage">
       <Sidebar />
       <Basket />
       <header className="title">
@@ -31,35 +30,8 @@ const MenuPagePres = ({dishesDisplayed, isAddedModalOpen}) => {
         </section>
       </section>
       {isAddedModalOpen && <AddedItemModal />}
-    </Wrapper>
+    </section>
   );
 };
-
-const Wrapper = styled.section`
-  min-height: 100vh;
-  background: var(--clr-primary-10);
-  .section-menu {
-    margin-bottom: 1rem;
-  }
-
-  @media screen and (min-width: 576px) {
-    .section-menu {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem 1rem;
-    }
-  }
-
-  @media screen and (min-width: 768px) {
-    .section-menu {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-  }
-
-  .section-menu img {
-    height: 15rem;
-    object-fit: cover;
-  }
-`;
 
 export default MenuPagePres;

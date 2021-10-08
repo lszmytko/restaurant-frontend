@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 
 const LoginComponentPres = ({
   email,
@@ -13,7 +12,7 @@ const LoginComponentPres = ({
   loading,
 }) => {
   return (
-    <Wrapper>
+    <div className="LoginComponent">
       <h3>Zaloguj się</h3>
       <form>
         <div className="info">
@@ -54,86 +53,8 @@ const LoginComponentPres = ({
         </p>
         <p className="login-loader">{loading && "Ładowanie..."}</p>
       </form>
-    </Wrapper>
+    </div>
   );
 };
-
-const Wrapper = styled.div`
-  input {
-    padding: 0.5rem;
-    font-size: 1.25rem;
-    border: 0.25rem solid var(--clr-primary-7);
-    font-size: 0.75rem;
-  }
-
-  input:focus {
-    border: none;
-    outline: none;
-  }
-
-  button {
-    width: 50%;
-    background: var(--clr-primary-5);
-    cursor: pointer;
-    border: 0.25rem solid var(--clr-primary-4);
-    font-weight: 900;
-  }
-
-  input {
-    text-align: center;
-    width: 48%;
-  }
-
-  .info {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  h3 {
-    text-align: center;
-    margin-bottom: 1rem;
-  }
-
-  // BUTTONS
-
-  .login_btn {
-    width: 100%;
-    border-radius: var(--radius);
-    padding: 0.5rem;
-    margin-top: 0.5rem;
-    background: var(--clr-primary-5);
-    cursor: pointer;
-    border: 0.25rem solid var(--clr-primary-4);
-    font-weight: 900;
-  }
-
-  .login_btn:disabled {
-    cursor: auto;
-    background: var(--clr-primary-8);
-  }
-
-  .backtoChoice_btn {
-    background: #fffd95;
-    border-color: #fffd95;
-  }
-
-  // END OF BUTTONS
-
-  .login-fail {
-    text-align: center;
-    color: red;
-  }
-
-  .login-loader {
-    color: green;
-    text-align: center;
-  }
-
-  @media screen and (min-width: 768px) {
-    input {
-      font-size: 1rem;
-    }
-  }
-`;
 
 export default LoginComponentPres;

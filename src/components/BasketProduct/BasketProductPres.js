@@ -1,9 +1,8 @@
 import React from "react";
-import styled from "styled-components";
 
 const BasketProductPres = ({ data, removeFromBasket }) => {
   return (
-    <Wrapper>
+    <article className="BasketProduct">
       {data.map((product, index) => {
         const { name, price, quantity } = product;
         return (
@@ -23,28 +22,8 @@ const BasketProductPres = ({ data, removeFromBasket }) => {
           </div>
         );
       })}
-    </Wrapper>
+    </article>
   );
 };
-
-const Wrapper = styled.article`
-  .card-container {
-    display: flex;
-    gap: 0.75rem;
-    justify-content: space-between;
-    font-size: 0.875rem;
-    color: white;
-    letter-spacing: 0.05rem;
-    margin-bottom: 0.5 rem;
-  }
-
-  .name::first-letter {
-    text-transform: capitalize;
-  }
-
-  .trash {
-    cursor: pointer;
-  }
-`;
 
 export default BasketProductPres;

@@ -1,0 +1,64 @@
+@import "../variables";
+@import "../mixins";
+
+.About {
+  display: block;
+  padding: 2rem;
+  text-align: center; 
+
+  .restaurant {
+    border-radius: $radius;
+    width: 100%;
+    margin: 2rem auto;
+    min-width: 20rem;
+  }
+
+  h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .description {
+    padding: 0 2rem;
+    background: $clr-grey-10;
+    border-radius: $radius;
+    width: 100%;
+    margin: 0 auto;
+
+    p {
+      letter-spacing: 0.2rem;
+      padding-bottom: 1rem;
+    }
+  }
+
+  .restaurant {
+    height: 20rem;
+    object-fit: cover;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .About {
+    display: flex;
+    justify-content: space-between;
+    align-content: stretch;
+
+    .underline {
+      margin: 2px auto 5px;
+    }
+    .restaurant {
+      @include calc(width, "50% - 5rem");
+      margin: auto;
+      margin-right: 5rem;
+      min-width: 30rem;
+    }
+
+    .description {
+      @include calc(width, "50% - 5rem");
+
+      p {
+        font-size: 0.9rem;
+        align-content: stretch;
+      }
+    }
+  }
+}

@@ -1,0 +1,151 @@
+@import "../variables";
+
+.Filter {
+  .filter-form {
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+  .price-form {
+    min-width: 15rem;
+    text-align: center;
+    margin-right: 2rem;
+    width: 100%;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .price-form-container {
+    min-width: 20rem;
+  }
+
+  .price-form label {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .price-form h4 {
+    margin-bottom: 1rem;
+  }
+
+  .rangeBar {
+    -webkit-appearance: none;
+    background: white;
+    width: 100%;
+    height: 1rem;
+    position: relative;
+    outline: none;
+    border-radius: $radius;
+  }
+
+  .rangeBar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: $clr-primary-5;
+    border-radius: $radius;
+    width: var(--width);
+  }
+
+  .rangeBar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: $clr-primary-2;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    z-index: 3;
+  }
+
+  .rangeBar::-moz-range-thumb {
+    width: 1.5rem;
+    height: 1.5rem;
+    background: $clr-primary-2;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .price-label {
+    display: block;
+  }
+
+  .filter-form-radio {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  .filter-form-options {
+    display: flex;
+    justify-content: center;
+  }
+
+  .filter-form-option {
+    padding: 0 1rem;
+  }
+
+  .filter-form-option label {
+    text-transform: capitalize;
+    font-size: 1rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+  }
+
+  input[type="checkbox"] {
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid $clr-primary-2;
+    cursor: pointer;
+  }
+
+  .filter-form-option input:checked {
+    background: $clr-primary-5;
+  }
+
+  .filter-title {
+    text-transform: capitalize;
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .Filter {
+    .filter-form {
+      display: flex;
+      justify-content: center;
+    }
+
+    .price-form {
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-bottom: 0;
+    }
+
+    .price-form label {
+      font-size: 1.25rem;
+    }
+
+    .filter-form-radio {
+      margin-right: 2rem;
+      margin-bottom: 0;
+    }
+
+    .filter-title {
+      font-size: 1.25rem;
+    }
+
+    .filter-form-option label {
+      font-size: 1.25rem;
+    }
+  }
+}

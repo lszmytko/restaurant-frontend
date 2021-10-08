@@ -1,0 +1,21 @@
+@import "../variables";
+
+.DeliveryPage {
+  background: $clr-primary-10;
+  .info {
+    width: 60%;
+    margin: 2rem auto;
+  }
+
+  .info p {
+    line-height: 2;
+    text-align: center;
+  }
+  .hours p {
+    margin-bottom: 0.25rem;
+  }
+
+  .hours-title {
+    font-weight: bold;
+  }
+}

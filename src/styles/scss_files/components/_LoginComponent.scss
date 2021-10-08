@@ -1,0 +1,77 @@
+@import "../variables";
+
+.LoginComponent {
+  input {
+    padding: 0.5rem;
+    font-size: 1.25rem;
+    border: 0.25rem solid $clr-primary-7;
+    font-size: 0.75rem;
+    text-align: center;
+    width: 48%;
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
+  }
+
+  button {
+    width: 50%;
+    background: $clr-primary-5;
+    cursor: pointer;
+    border: 0.25rem solid $clr-primary-4;
+    font-weight: 900;
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  // BUTTONS
+
+  .login_btn {
+    width: 100%;
+    border-radius: $radius;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    background: $clr-primary-5;
+    cursor: pointer;
+    border: 0.25rem solid $clr-primary-4;
+    font-weight: 900;
+
+    &:disabled {
+      cursor: auto;
+      background: $clr-primary-8;
+    }
+  }
+
+  .backtoChoice_btn {
+    background: #fffd95;
+    border-color: #fffd95;
+  }
+
+  // END OF BUTTONS
+
+  .login-fail {
+    text-align: center;
+    color: red;
+  }
+
+  .login-loader {
+    color: green;
+    text-align: center;
+  }
+}
+@media screen and (min-width: 768px) {
+  .LoginComponent {
+    input {
+      font-size: 1rem;
+    }
+  }
+}

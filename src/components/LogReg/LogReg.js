@@ -19,6 +19,4 @@ const LogReg = () => {
   );
 };
 
-const Wrapper = styled.div``;
-
 export default LogReg;
