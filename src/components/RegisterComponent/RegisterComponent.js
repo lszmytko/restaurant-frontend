@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useState } from "react";
-import styled from "styled-components";
 import { useGlobalContext } from "../../context/context";
 import { useLogRegContext } from "../../context/logregcontext";
 import RegisterComponentPres from "./RegisterComponentPres";
@@ -95,7 +94,8 @@ const RegisterComponent = () => {
       return;
     }
 
-    if (!validator.isMobilePhone("pl-PL")) {
+    if (!validator.isMobilePhone(phone, "pl-PL")) {
+      console.log("coś nie tak");
       setError((prevError) => {
         return { ...prevError, isPhone: "wrong phone number format" };
       });
@@ -116,6 +116,7 @@ const RegisterComponent = () => {
           password,
         }
       );
+      console.log("odpowiedz", response.data);
       if (response.data.ifEmailExists) {
         setLoading(false);
         setError((prevError) => {

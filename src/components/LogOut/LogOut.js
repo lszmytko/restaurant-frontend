@@ -20,6 +20,7 @@ const LogOut = () => {
     });
 
     localStorage.removeItem("token");
+    localStorage.removeItem("user")
   };
 
   return <LogOutPres handleLogOut={handleLogOut} />;
