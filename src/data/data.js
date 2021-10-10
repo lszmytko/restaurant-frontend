@@ -1,22 +1,22 @@
 const openingHours = [
-    {'day' : 'Monday', 'hours' : '10:00 - 21:00'},
-    {'day' : 'Tuesday', 'hours' : '09:00 - 18:00'},
-    {'day' : 'Wednesday', 'hours' : '11:00 - 20:00'},
-    {'day' : 'Thursday', 'hours' : '10:00 - 18:00'},
-    {'day' : 'Friday', 'hours' : '10:00 - 18:00'},
-    {'day' : 'Saturday', 'hours' : '10:00 - 16:00'},
-    {'day' : 'Sunday', 'hours' : '11:00 - 15:00'},
-]
+  { day: "Sunday", hours: "11:00 - 15:00" },
+  { day: "Monday", hours: "10:00 - 21:00" },
+  { day: "Tuesday", hours: "09:00 - 18:00" },
+  { day: "Wednesday", hours: "11:00 - 20:00" },
+  { day: "Thursday", hours: "10:00 - 18:00" },
+  { day: "Friday", hours: "10:00 - 18:00" },
+  { day: "Saturday", hours: "10:00 - 16:00" },
+];
 
 const deliveryHours = [
-    {'day' : 'Monday', 'hours' : '09:00 - 18:00'},
-    {'day' : 'Tuesday', 'hours' : '09:00 - 19:00'},
-    {'day' : 'Wednesday', 'hours' : '11:00 - 21:00'},
-    {'day' : 'Thursday', 'hours' : '10:00 - 18:00'},
-    {'day' : 'Friday', 'hours' : '10:00 - 20:00'},
-    {'day' : 'Saturday', 'hours' : '10:00 - 16:00'},
-    {'day' : 'Sunday', 'hours' : '11:00 - 15:00'},
-]
+  { day: "Sunday", hours: "11:00 - 15:00" },
+  { day: "Monday", hours: "09:00 - 18:00" },
+  { day: "Tuesday", hours: "09:00 - 19:00" },
+  { day: "Wednesday", hours: "11:00 - 21:00" },
+  { day: "Thursday", hours: "10:00 - 18:00" },
+  { day: "Friday", hours: "10:00 - 20:00" },
+  { day: "Saturday", hours: "10:00 - 16:00" },
+];
 
 const dishes = [
   {
@@ -56,6 +56,4 @@ const dishes = [
   },
 ];
 
-
-
-export {deliveryHours, openingHours, dishes}
+export { deliveryHours, openingHours, dishes };
