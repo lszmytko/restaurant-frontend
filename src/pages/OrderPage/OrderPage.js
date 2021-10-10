@@ -47,13 +47,11 @@ const OrderPage = () => {
   };
 
   const decreaseOrderedQuantity = (e) => {
-    console.log(e.target);
     setOrderedCard((prevCard) => {
       return prevCard.map((product, index) => {
         if (parseInt(e.target.dataset.index) !== index) {
           return product;
         } else if (parseInt(e.target.dataset.index) === index) {
-          console.log("hehehe");
           return { ...product, quantity: product.quantity - 1 };
         }
       });
@@ -69,9 +67,6 @@ const OrderPage = () => {
 
   // Placing an order - call to api
   const handleOrder = async (id) => {
-    console.log("orderedCard", orderedCard);
-    console.log("price", totalValue);
-    console.log("userInfo", userInfo);
     try {
       const response = await axios.post(
         "https://restaurant-site-api.herokuapp.com/placeOrder",
@@ -88,9 +83,7 @@ const OrderPage = () => {
           },
         }
       );
-      console.log("response data", response.data);
       if (response.data.success) {
-        console.log("hhhh");
         setShowLoginModal(false);
         setFinalInfoshown(true);
       } else {

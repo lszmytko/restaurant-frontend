@@ -95,7 +95,6 @@ const RegisterComponent = () => {
     }
 
     if (!validator.isMobilePhone(phone, "pl-PL")) {
-      console.log("coś nie tak");
       setError((prevError) => {
         return { ...prevError, isPhone: "wrong phone number format" };
       });
@@ -116,7 +115,6 @@ const RegisterComponent = () => {
           password,
         }
       );
-      console.log("odpowiedz", response.data);
       if (response.data.ifEmailExists) {
         setLoading(false);
         setError((prevError) => {
@@ -125,7 +123,6 @@ const RegisterComponent = () => {
         // To stop the else of the fucntion
         return;
       }
-      console.log(response);
       setLogRegOption({
         choice: "before",
       });
@@ -135,7 +132,6 @@ const RegisterComponent = () => {
         ...error,
         callToApi: "Ups! Coś poszło nie tak!",
       });
-      console.log("register error", error);
       setLoading(false);
     }
   };

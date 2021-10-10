@@ -35,12 +35,10 @@ export default function AddressForm({ setFinalInfoshown, setLoading }) {
   const checkIfFormFilled = () => {
     let flag = true;
     for (let value in formData) {
-      console.log(formData[value]);
       if (formData[value].length === 0) {
         flag = false;
       }
     }
-    console.log("flaga", flag);
     return flag;
   };
 
@@ -52,7 +50,7 @@ export default function AddressForm({ setFinalInfoshown, setLoading }) {
       setOrderSubmitted(true);
       setLoading(true);
       setTimeout(() => {
-        console.log("działakksk");
+
         setFinalInfoshown(true);
         setCard([]);
         setOrderedCard([]);

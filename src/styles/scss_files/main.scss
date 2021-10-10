@@ -155,11 +155,6 @@ button {
   background: $clr-primary-3;
 }
 
-.test {
-  transform: scale(0.8);
-  transition: all 5s linear;
-}
-
 .sidebar-closed {
   transform: translateX(-65%);
 }

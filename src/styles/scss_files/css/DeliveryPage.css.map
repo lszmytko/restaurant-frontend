@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACaE,wBAAwB;AAExB,qCAAqC;AAarC,8BAA8B;AD1BhC,AAAA,aAAa,CAAC;EACZ,UAAU,ECiBO,OAAmB;CDArC;;AAlBD,AAEE,aAFW,CAEX,KAAK,CAAC;EACJ,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,SAAS;CAClB;;AALH,AAOE,aAPW,CAOX,KAAK,CAAC,CAAC,CAAC;EACN,WAAW,EAAE,CAAC;EACd,UAAU,EAAE,MAAM;CACnB;;AAVH,AAWE,aAXW,CAWX,MAAM,CAAC,CAAC,CAAC;EACP,aAAa,EAAE,OAAO;CACvB;;AAbH,AAeE,aAfW,CAeX,YAAY,CAAC;EACX,WAAW,EAAE,IAAI;CAClB",
+    "sources": [
+        "../pages/DeliveryPage.scss",
+        "../_variables.scss"
+    ],
+    "names": [],
+    "file": "DeliveryPage.css"
+}

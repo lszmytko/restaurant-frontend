@@ -3,7 +3,6 @@
 .DishCard {
   background: $clr-primary-10;
   text-align: center;
-  transition: all 0.5s linear;
   .cardInfo {
     padding: 1rem 0.25rem;
   }
@@ -14,8 +13,21 @@
     gap: 2rem;
   }
 
+  
   .cardInfo_choice button:nth-child(1) {
     margin-right: 0.5rem;
+  }
+
+  .intersection{
+    transition: all .5s linear;
+  }
+
+  .visible {
+    transform: scale(1);
+  }
+  
+  .not-visible{
+    transform: scale(0.3);
   }
 
   .plus-minus-button {

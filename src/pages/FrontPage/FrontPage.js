@@ -8,7 +8,6 @@ const FrontPage = () => {
     // if (isSidebarOpen) {
     //   setIsSidebarOpen(false);
     // }
-    console.log(window.screen.width);
     if (window.screen.width < 768) {
       setIsFullScreen(false);
     } else {

@@ -47,7 +47,6 @@ const CustomerData = ({ setLoading, loading }) => {
     setLoading(true);
 
     try {
-      console.log("przzepre");
       const response = await axios.put(
         `https://restaurant-site-api.herokuapp.com/update/${id}`,
         {

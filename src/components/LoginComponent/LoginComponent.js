@@ -31,8 +31,6 @@ const LoginComponent = () => {
         }
       );
 
-      console.log("response", response);
-
       const userData = response.data.details;
       const jwtToken = response.data.jwtToken;
       if (Object.keys(userData).length) {

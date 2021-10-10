@@ -6,7 +6,6 @@ const AddedItemModal = () => {
   const { setIsAddedModalOpen } = useGlobalContext();
 
   const handleHideAddedModal = () => {
-    console.log("zadziałało");
     setIsAddedModalOpen(false);
   };
 

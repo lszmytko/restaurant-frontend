@@ -52,13 +52,11 @@ const Filter = () => {
   };
 
   const setCuisineCriteria = (checked, radioValue) => {
-    console.log(checked);
     let newCuisines = filterCriteria.cuisine;
     if (!checked) {
       newCuisines = newCuisines.filter((item) => {
         return item !== radioValue;
       });
-      console.log(newCuisines);
     } else newCuisines.push(radioValue);
 
     setFilterCriteria({
@@ -73,7 +71,6 @@ const Filter = () => {
   };
 
   const toggleCuisineRadio = (e) => {
-    console.log("działa sprawdzenie");
     if (filterCriteria.cuisine.includes(e.target.name)) {
       return false;
     } else {

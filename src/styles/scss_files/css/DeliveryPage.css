@@ -1,0 +1,25 @@
+/* primary/main color */
+/* lighter shades of primary color */
+/* grey used for paragraphs */
+.DeliveryPage {
+  background: #e6feff;
+}
+
+.DeliveryPage .info {
+  width: 60%;
+  margin: 2rem auto;
+}
+
+.DeliveryPage .info p {
+  line-height: 2;
+  text-align: center;
+}
+
+.DeliveryPage .hours p {
+  margin-bottom: 0.25rem;
+}
+
+.DeliveryPage .hours-title {
+  font-weight: bold;
+}
+/*# sourceMappingURL=DeliveryPage.css.map */

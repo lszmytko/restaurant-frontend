@@ -1,0 +1,189 @@
+/* primary/main color */
+/* lighter shades of primary color */
+/* grey used for paragraphs */
+.OrderPage {
+  --clr-summary: #52006a;
+  min-height: 100vh;
+  background: #e6feff;
+}
+
+.OrderPage .details-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.OrderPage .details {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.OrderPage .lack-of-order {
+  text-align: center;
+  width: 25rem;
+  margin: 3rem auto 3rem;
+  line-height: 1.5;
+  text-transform: none;
+}
+
+.OrderPage .lack-of-order:first-letter {
+  text-transform: capitalize;
+}
+
+.OrderPage .number-span {
+  display: inline-block;
+  height: 2rem;
+  width: 2rem;
+  background: #f38ba0;
+  line-height: 2rem;
+  border-radius: 50%;
+  margin-right: 1rem;
+  text-align: center;
+}
+
+.OrderPage .product {
+  margin-bottom: 1.5rem;
+}
+
+.OrderPage .product-details {
+  text-transform: capitalize;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.OrderPage .product h4:nth-child(2) {
+  text-align: center;
+}
+
+.OrderPage .products {
+  max-width: 30rem;
+  text-align: left;
+  margin: 0 auto;
+}
+
+.OrderPage .product-header {
+  text-align: center;
+  font-size: 2rem;
+  letter-spacing: 0.25rem;
+  font-weight: bold;
+}
+
+.OrderPage h4 span {
+  margin-left: 0.25rem;
+}
+
+.OrderPage span i {
+  cursor: pointer;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.OrderPage span i:hover {
+  color: #00f2ff;
+}
+
+.OrderPage .span-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.OrderPage .details-name,
+.OrderPage .details-value {
+  display: inline-block;
+}
+
+.OrderPage h4 span:nth-child(1) {
+  margin-left: 0.5rem;
+}
+
+.OrderPage .back-to-menu-btn {
+  display: block;
+  margin: 0 auto;
+  padding: 1rem;
+  width: 15rem;
+  color: white;
+  text-align: center;
+}
+
+.OrderPage .plus-minus-btn {
+  color: #009199;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.OrderPage .plus-minus-btn:hover {
+  color: #00f2ff;
+}
+
+.OrderPage .quantity-span {
+  margin-right: 1rem;
+}
+
+.OrderPage button:disabled {
+  color: grey;
+}
+
+.OrderPage button:disabled:hover {
+  color: grey;
+}
+
+.OrderPage .summary {
+  margin-top: 2rem;
+  color: #00f2ff;
+}
+
+.OrderPage .summary h4 {
+  color: #00f2ff;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.OrderPage .underline {
+  height: 0.25rem;
+  background: #00f2ff;
+  width: 100%;
+}
+
+.OrderPage .underline-2 {
+  width: 50%;
+  background: #df5e5e;
+}
+
+.OrderPage .finalInfoShown-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  background: #ccfcff;
+}
+
+.OrderPage .finalInfoShown-wrapper h2 {
+  text-transform: none;
+  text-align: center;
+}
+
+.OrderPage .finalInfoShown-wrapper h2:first-letter {
+  text-transform: capitalize;
+}
+
+.OrderPage .order-btn {
+  padding: 1rem 0;
+  width: 100%;
+  font-size: 1rem;
+  display: block;
+}
+/*# sourceMappingURL=OrderPage.css.map */

@@ -42,10 +42,7 @@ const AppContextProvider = ({ children }) => {
     }, [orderedCard]);
 
   useEffect(() => {
-    // console.log(JSON.parse(localStorage.getItem("user")));
-    // console.log(Boolean(JSON.parse(localStorage.getItem("user"))) == true)
     if (Boolean(localStorage.getItem("user"))) {
-      console.log('okiki')
       const user = JSON.parse(localStorage.getItem("user"));
       setUserInfo(user);
     }

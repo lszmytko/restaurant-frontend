@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../pages/FrontPage.scss",
+        "../_variables.scss"
+    ],
+    "names": [],
+    "file": "FrontPage.min.css"
+}

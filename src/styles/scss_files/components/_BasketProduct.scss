@@ -9,6 +9,10 @@
     color: white;
     letter-spacing: 0.05rem;
     margin-bottom: 0.5 rem;
+
+    .name{
+      flex-grow: 1;
+    }
   }
 
   .name::first-letter {

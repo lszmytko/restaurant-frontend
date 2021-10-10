@@ -1,0 +1,35 @@
+/* primary/main color */
+/* lighter shades of primary color */
+/* grey used for paragraphs */
+.MenuPage {
+  min-height: 100vh;
+  background: #e6feff;
+}
+
+.MenuPage .section-menu {
+  margin-bottom: 1rem;
+}
+
+.MenuPage .section-menu img {
+  height: 15rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media screen and (min-width: 576px) {
+  .MenuPage .section-menu {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    gap: 1rem 1rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .MenuPage .section-menu {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+/*# sourceMappingURL=MenuPage.css.map */

@@ -28,7 +28,6 @@ const CustomerHistory = () => {
           },
         }
       );
-      console.log("response", response);
       // parse the json of the dishes returned
       const finalResponse = response.data.message.map((element) => {
         return { ...element, dishes: JSON.parse(element.dishes)[0] };
@@ -37,7 +36,6 @@ const CustomerHistory = () => {
       setOrdersInfo(finalResponse);
       // Changing the flag to show orders info
       setHistoryLoaded(true);
-      console.log("info", ordersInfo);
     } catch (error) {
       console.log(error);
     }
@@ -46,7 +44,6 @@ const CustomerHistory = () => {
   // On mount add order history to the state
   useEffect(() => {
     getHistory();
-    console.log("updated history");
   }, []);
   return (
     <CustomerHistoryPres

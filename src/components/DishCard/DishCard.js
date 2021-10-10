@@ -4,7 +4,7 @@ import DishCardPres from "./DishCardPres.js";
 
 const DishCard = ({ image, price, name }) => {
   const [quantity, setQuantity] = useState(0);
-  const { isAddedModalOpen, setIsAddedModalOpen, addToBasket } =
+  const { isAddedModalOpen, addToBasket } =
     useGlobalContext();
   const element = useRef(null);
   const [visible, setVisible] = useState(false);
@@ -16,9 +16,11 @@ const DishCard = ({ image, price, name }) => {
   };
 
   useEffect(() => {
+    console.log("observer")
     const elementObserver = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
+          console.log("intersecting")
           setVisible(true);
         }
       },

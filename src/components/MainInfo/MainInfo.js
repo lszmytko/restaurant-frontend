@@ -25,16 +25,14 @@ const MainInfo = () => {
         : currentTime.getMinutes();
     const startHour = data[day - 1].hours.substr(0, 5);
     const endHour = data[day - 1].hours.substr(8, 5);
-    console.log(`${startHour}`);
     if (
       `${hour}:${minutes}:00` > `${startHour}` &&
       `${hour}:${minutes}:00` < `${endHour}`
     ) {
-      console.log("działa");
       setTooltipData((prevState) => {
         return { ...prevState, [data]: true };
       });
-    } else console.log("nie działa");
+    } else ;
   };
 
   const showCurrentHours = (data) => {

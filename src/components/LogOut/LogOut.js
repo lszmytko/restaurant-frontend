@@ -6,7 +6,6 @@ const LogOut = () => {
   const { userInfo, setUserInfo } = useGlobalContext();
 
   const handleLogOut = () => {
-    console.log("klikniete");
     setUserInfo((prevUser) => {
       return {
         userId: "",
