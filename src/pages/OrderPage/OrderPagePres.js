@@ -1,5 +1,5 @@
 import React from "react";
-import { Sidebar, LogReg, AddressForm } from "../../components/index";
+import { Sidebar } from "../../components/index";
 import { Link } from "react-router-dom";
 import Loader from "react-loader-spinner";
 import LoginModal from "../../components/LoginModal/LoginModal.js";

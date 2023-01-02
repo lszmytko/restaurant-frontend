@@ -63,8 +63,6 @@ const BasketPres = ({
   );
 };
 
-const Wrapper = styled.aside`
-  
-`;
+const Wrapper = styled.aside``;
 
 export default BasketPres;

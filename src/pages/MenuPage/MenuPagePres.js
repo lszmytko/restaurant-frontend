@@ -1,5 +1,6 @@
 import React from "react";
-import AddedItemModal from "../../components/AddedItemModal/AddedItemModal";
+
+import AddedItemModal from "../../components/AddedItemModal";
 import DishCard from "../../components/DishCard/DishCard";
 import { Filter, Sidebar, Basket } from "../../components/index";
 

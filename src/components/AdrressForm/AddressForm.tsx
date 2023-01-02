@@ -1,10 +1,8 @@
-import styled from "styled-components";
-
 import React, { useState, useEffect } from "react";
 import { useGlobalContext } from "../../context/context.js";
 import AddressFormPres from "./AddressFormPres.js";
 
-export default function AddressForm({ setFinalInfoshown, setLoading }) {
+const AddressForm = ({ setFinalInfoshown, setLoading }) => {
   const [formData, setFormData] = useState({
     city: "",
     street: "",
@@ -25,24 +23,25 @@ export default function AddressForm({ setFinalInfoshown, setLoading }) {
     };
   }, []);
 
-  const handleInputChange = (e) => {
-    const changeProperty = e.target.id;
+  const handleInputChange = (e: React.FormEvent<HTMLInputElement>) => {
+    const { id, value } = e.target as HTMLInputElement;
     setFormData((prevData) => {
-      return { ...prevData, [changeProperty]: e.target.value };
+      return { ...prevData, [id]: value };
     });
   };
 
   const checkIfFormFilled = () => {
     let flag = true;
-    for (let value in formData) {
-      if (formData[value].length === 0) {
+    let key: keyof typeof formData;
+    for (key in formData) {
+      if (formData[key].length === 0) {
         flag = false;
       }
     }
     return flag;
   };
 
-  const submitOrder = (e) => {
+  const submitOrder = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setFormSubmitted(true);
     const ifFormFilled = checkIfFormFilled();
@@ -50,7 +49,6 @@ export default function AddressForm({ setFinalInfoshown, setLoading }) {
       setOrderSubmitted(true);
       setLoading(true);
       setTimeout(() => {
-
         setFinalInfoshown(true);
         setCard([]);
         setOrderedCard([]);
@@ -71,4 +69,6 @@ export default function AddressForm({ setFinalInfoshown, setLoading }) {
       submitOrder={submitOrder}
     />
   );
-}
+};
+
+export default AddressForm;
