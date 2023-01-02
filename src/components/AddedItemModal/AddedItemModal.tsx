@@ -1,6 +1,14 @@
 import React from "react";
 
-const AddedItemModalPres = ({handleHideAddedModal}) => {
+import { useGlobalContext } from "../../context/context";
+
+const AddedItemModal = () => {
+  const { setIsAddedModalOpen } = useGlobalContext();
+
+  const handleHideAddedModal = () => {
+    setIsAddedModalOpen(false);
+  };
+
   return (
     <div className="addedItemModal">
       <div className="banner">
@@ -14,4 +22,4 @@ const AddedItemModalPres = ({handleHideAddedModal}) => {
   );
 };
 
-export default AddedItemModalPres;
+export default AddedItemModal;

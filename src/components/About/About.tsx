@@ -1,5 +1,6 @@
-import restaurant from "../../images/restaurant.jpg";
 import React from "react";
+
+import restaurant from "../../images/restaurant.jpg";
 
 const About = () => {
   return (
