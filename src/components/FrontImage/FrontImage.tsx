@@ -1,33 +1,38 @@
-import { useEffect, useState } from "react";
 import React from "react";
-import FrontImagePres from "./FrontImagePres";
-import salad from "../../images/frontSlider/salad.jpg";
-import bolognese from "../../images/frontSlider/bolognese.jpg";
-import pierogi from "../../images/frontSlider/pierogi.jpg";
 
-const slides = [salad, bolognese, pierogi];
+import { useShowSlide } from "./useShowSlide";
 
 const FrontImage = () => {
-  const [activeSlide, setActiveSlide] = useState(0);
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setActiveSlide((prevSlide) => {
-        if (prevSlide === slides.length - 1) {
-          return 0;
-        }
-        return prevSlide + 1;
-      });
-    }, 3000);
-    return () => clearTimeout(timeout);
-  }, [activeSlide]);
-
+  const { slides, setActiveSlide, activeSlide } = useShowSlide();
   return (
-    <FrontImagePres
-      slides={slides}
-      activeSlide={activeSlide}
-      setActiveSlide={setActiveSlide}
-    />
+    <section className="FrontImage">
+      <section
+        className="photo"
+        style={{
+          background: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${slides[activeSlide]}) no-repeat center/cover fixed`
+        }}
+      >
+        <h1>Witajcie smakosze...</h1>
+        <h2>
+          <span>Gotujemy tak,</span>
+          <br />
+          <span>jak chcielibyśmy jadać</span>
+        </h2>
+        <div className="slides">
+          {slides.map((slide, index) => {
+            return (
+              <div
+                className={`${
+                  activeSlide === index ? "slider activeSlider" : "slider"
+                }`}
+                key={index}
+                onClick={() => setActiveSlide(index)}
+              ></div>
+            );
+          })}
+        </div>
+      </section>
+    </section>
   );
 };
 

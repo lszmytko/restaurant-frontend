@@ -1,4 +1,4 @@
-import FrontImage from "./FrontImage/FrontImage";
+import FrontImage from "./FrontImage";
 import About from "./About";
 import TryOut from "./TryOut/TryOut";
 import Footer from "./Footer/Footer";
