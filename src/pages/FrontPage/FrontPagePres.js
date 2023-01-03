@@ -5,8 +5,8 @@ import {
   TryOut,
   Footer,
   Sidebar,
-  Basket,
-} from "../../components/index.js";
+  Basket
+} from "../../components";
 import Navigation from "../../components/Navigation/Navigation.js";
 import MainInfo from "../../components/MainInfo/MainInfo.js";
 
