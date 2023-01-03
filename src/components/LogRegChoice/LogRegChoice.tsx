@@ -1,20 +1,31 @@
 import React from "react";
 
-const LogRegChoicePres = ({ handleLogChoice, handleRegChoice }) => {
+import { useLogRegContext } from "../../context/logregcontext";
+
+const LogRegChoice = () => {
+  const { setLogRegOption } = useLogRegContext();
+
+  const handleLogRegChoice = (e, choice: "login" | "register") => {
+    e.preventDefault();
+    setLogRegOption({
+      choice
+    });
+  };
+
   return (
     <section className="LogRegChoice">
       <h2>Musisz się zalogować</h2>
       <form action="/">
         <button
           type="submit"
-          onClick={(e) => handleLogChoice(e)}
+          onClick={(e) => handleLogRegChoice(e, "login")}
           className="btn btn-logRegChoice"
         >
           Zaloguj się
         </button>
         <button
           type="submit"
-          onClick={(e) => handleRegChoice(e)}
+          onClick={(e) => handleLogRegChoice(e, "register")}
           className="btn btn-logRegChoice"
         >
           Zarejestruj się{" "}
@@ -24,4 +35,4 @@ const LogRegChoicePres = ({ handleLogChoice, handleRegChoice }) => {
   );
 };
 
-export default LogRegChoicePres;
+export default LogRegChoice;
