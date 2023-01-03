@@ -8,6 +8,7 @@ import Filter from "./Filter/Filter";
 import Basket from "./Basket";
 import BasketProduct from "./BasketProduct";
 import LogReg from "./LogReg/LogReg";
+import CustomerData from "./CustomerData";
 
 export {
   FrontImage,
@@ -19,4 +20,5 @@ export {
   Basket,
   BasketProduct,
   LogReg,
+  CustomerData
 };

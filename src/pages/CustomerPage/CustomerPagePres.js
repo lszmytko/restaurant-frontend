@@ -1,6 +1,6 @@
 import React from "react";
 import { Sidebar } from "../../components";
-import CustomerData from "../../components/CustomerData/CustomerData";
+import CustomerData from "../../components/CustomerData";
 import CustomerHistory from "../../components/CustomerHistory/CustomerHistory";
 import LoginModal from "../../components/LoginModal/LoginModal";
 import LogOut from "../../components/LogOut/LogOut";

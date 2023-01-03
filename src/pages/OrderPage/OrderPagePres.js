@@ -1,5 +1,5 @@
 import React from "react";
-import { Sidebar } from "../../components/index";
+import { Sidebar } from "../../components";
 import { Link } from "react-router-dom";
 import Loader from "react-loader-spinner";
 import LoginModal from "../../components/LoginModal/LoginModal.js";
@@ -14,7 +14,7 @@ const OrderPagePres = ({
   totalValue,
   handleOrder,
   userInfo,
-  DELIVERY_PRICE,
+  DELIVERY_PRICE
 }) => {
   if (finalInfoShown) {
     return (

@@ -1,21 +1,14 @@
 import React from "react";
 
 const CustomerDataPres = ({
-  name,
-  handleNameChange,
-  lastName,
-  handleLastNameChange,
-  street,
-  handleStreetChange,
-  flatNumber,
-  handleFlatNumberChange,
-  phone,
-  handlePhoneChange,
+  data,
+  handleDataChange,
   error,
   handleUpdate,
   loading,
-  isDataChanged,
+  isDataChanged
 }) => {
+  const { name, lastName, street, flatNumber, phone } = data;
   return (
     <section className="CustomerData">
       <h3>Twoje dane</h3>
@@ -27,7 +20,7 @@ const CustomerDataPres = ({
               type="text"
               value={name}
               name="name"
-              onChange={(e) => handleNameChange(e)}
+              onChange={(e) => handleDataChange(e, name)}
             />
           </div>
           <div className="inputDiv">
@@ -36,7 +29,7 @@ const CustomerDataPres = ({
               type="text"
               value={lastName}
               name="lastName"
-              onChange={(e) => handleLastNameChange(e)}
+              onChange={(e) => handleDataChange(e, lastName)}
             />
           </div>
           <div className="inputDiv">
@@ -45,7 +38,7 @@ const CustomerDataPres = ({
               type="text"
               value={street}
               name="street"
-              onChange={(e) => handleStreetChange(e)}
+              onChange={(e) => handleDataChange(e, street)}
             />
           </div>
           <div className="inputDiv">
@@ -54,7 +47,7 @@ const CustomerDataPres = ({
               type="text"
               value={flatNumber}
               name="flatNumber"
-              onChange={(e) => handleFlatNumberChange(e)}
+              onChange={(e) => handleDataChange(e, flatNumber)}
             />
           </div>
           <div className="inputDiv">
@@ -63,7 +56,7 @@ const CustomerDataPres = ({
               type="text"
               value={phone}
               name="phone"
-              onChange={(e) => handlePhoneChange(e)}
+              onChange={(e) => handleDataChange(e, phone)}
             />
           </div>
           <button

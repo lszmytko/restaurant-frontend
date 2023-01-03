@@ -1,5 +1,5 @@
 import React from "react";
-import { Footer, Sidebar } from "../../components/index";
+import { Footer, Sidebar } from "../../components";
 import MyMapComponent from "../../components/MyMapComponent/MyMapComponent";
 
 const DeliveryPagePres = ({ getTodayOpeningHours, getTodayDeliveryHours }) => {

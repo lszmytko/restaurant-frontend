@@ -2,7 +2,7 @@ import React from "react";
 
 import AddedItemModal from "../../components/AddedItemModal";
 import DishCard from "../../components/DishCard/DishCard";
-import { Filter, Sidebar, Basket } from "../../components/index";
+import { Filter, Sidebar, Basket } from "../../components";
 
 const MenuPagePres = ({ dishesDisplayed, isAddedModalOpen }) => {
   return (

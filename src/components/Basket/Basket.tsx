@@ -1,7 +1,7 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 
 import { useGlobalContext } from "../../context/context.js";
-import { BasketProduct } from "../index.js";
+import { BasketProduct } from "../";
 import BasketPres from "./BasketPres";
 
 const Basket = () => {
@@ -11,7 +11,7 @@ const Basket = () => {
     card,
     setCard,
     calculateOrder,
-    setOrderedCard,
+    setOrderedCard
   } = useGlobalContext();
 
   const BasketDiv = useRef(null);
