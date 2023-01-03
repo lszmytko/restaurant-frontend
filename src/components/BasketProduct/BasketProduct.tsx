@@ -1,6 +1,9 @@
 import React from "react";
 
-const BasketProductPres = ({ data, removeFromBasket }) => {
+import { useGlobalContext } from "../../context/context";
+
+const BasketProduct = ({ data }) => {
+  const { removeFromBasket } = useGlobalContext();
   return (
     <article className="BasketProduct">
       {data.map((product, index) => {
@@ -8,9 +11,7 @@ const BasketProductPres = ({ data, removeFromBasket }) => {
         return (
           <div className="card-container" id={index} key={index}>
             <div className="name">{name}</div>
-            <div className="value">
-              {parseFloat(price * quantity).toFixed(2)}PLN
-            </div>
+            <div className="value">{(price * quantity).toFixed(2)}PLN</div>
             <div className="quantity">Ilość: {quantity}</div>
             <div className="removeItem">
               <i
@@ -26,4 +27,4 @@ const BasketProductPres = ({ data, removeFromBasket }) => {
   );
 };
 
-export default BasketProductPres;
+export default BasketProduct;
