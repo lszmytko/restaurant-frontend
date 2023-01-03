@@ -5,9 +5,8 @@ import Footer from "./Footer/Footer";
 
 import Sidebar from "./Sidebar/Sidebar";
 import Filter from "./Filter/Filter";
-import Basket from "./Basket/Basket";
-import BasketProduct from "./BasketProduct/BasketProduct";
-import AddressForm from "./AdrressForm";
+import Basket from "./Basket";
+import BasketProduct from "./BasketProduct";
 import LogReg from "./LogReg/LogReg";
 
 export {
@@ -19,6 +18,5 @@ export {
   Filter,
   Basket,
   BasketProduct,
-  AddressForm,
   LogReg,
 };

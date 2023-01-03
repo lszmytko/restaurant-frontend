@@ -1,10 +1,10 @@
-import styled from "styled-components";
-import { useGlobalContext } from "../../context/context.js";
 import React, { useRef, useEffect } from "react";
-import { BasketProduct } from "../index.js";
-import BasketPres from "./BasketPres.js";
 
-const Basket = (props) => {
+import { useGlobalContext } from "../../context/context.js";
+import { BasketProduct } from "../index.js";
+import BasketPres from "./BasketPres";
+
+const Basket = () => {
   const {
     isBasketOpen,
     setIsBasketOpen,

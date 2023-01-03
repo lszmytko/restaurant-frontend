@@ -1,8 +1,9 @@
 import React from "react";
-import { BsInfoCircle } from "react-icons/bs";
-import DeliveryHours from "../DeliveryHours/DeliveryHours";
-import OpeningHours from "../OpeningHours/OpeningHours";
 import { AiOutlineArrowDown, AiOutlineArrowUp } from "react-icons/ai";
+
+import { BsInfoCircle } from "react-icons/bs";
+import DeliveryHours from "../DeliveryHours";
+import OpeningHours from "../OpeningHours/OpeningHours";
 
 const MainInfoPres = ({
   openingDetailsShown,

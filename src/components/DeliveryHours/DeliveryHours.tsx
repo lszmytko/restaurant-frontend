@@ -8,7 +8,7 @@ const DeliveryHours = () => {
         const { day, hours } = item;
         return (
           <li className="details_days" key={index}>
-            {day.substr(0, 3)} {hours}
+            {day.substring(0, 3)} {hours}
           </li>
         );
       })}
