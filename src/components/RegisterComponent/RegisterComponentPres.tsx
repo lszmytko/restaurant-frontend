@@ -1,25 +1,16 @@
 import React from "react";
 
 const RegisterComponentPres = ({
-  name,
-  handleNameChange,
-  lastName,
-  handleLastNameChange,
-  email,
-  handleEmailChange,
-  street,
-  handleStreetChange,
-  flatNumber,
-  handleFlatNumberChange,
-  password,
-  handlePasswordChange,
-  phone,
-  handlePhoneChange,
+  handleRegisterData,
+  registerData,
   handleRegister,
   handleBackToChoice,
   error,
-  loading,
+  loading
 }) => {
+  const { name, lastName, email, street, flatNumber, password, phone } =
+    registerData;
+
   return (
     <div className="RegisterComponent">
       <form className="registration-form">
@@ -31,8 +22,8 @@ const RegisterComponentPres = ({
             name="name"
             id="name"
             placeholder="Imię"
-            value={name}
-            onChange={(e) => handleNameChange(e)}
+            value={registerData.name}
+            onChange={(e) => handleRegisterData(e)}
           />
         </div>
         <div className="registration-input-div">
@@ -43,7 +34,7 @@ const RegisterComponentPres = ({
             id="last_name"
             placeholder="Nazwisko"
             value={lastName}
-            onChange={(e) => handleLastNameChange(e)}
+            onChange={(e) => handleRegisterData(e)}
           />
         </div>
         <div className="registration-input-div">
@@ -54,7 +45,7 @@ const RegisterComponentPres = ({
             id="email"
             placeholder="Email"
             value={email}
-            onChange={(e) => handleEmailChange(e)}
+            onChange={(e) => handleRegisterData(e)}
           />
         </div>
         <div className="registration-input-div">
@@ -65,7 +56,7 @@ const RegisterComponentPres = ({
             id="street"
             placeholder="Ulica"
             value={street}
-            onChange={(e) => handleStreetChange(e)}
+            onChange={(e) => handleRegisterData(e)}
           />
         </div>
         <div className="registration-input-div">
@@ -76,7 +67,7 @@ const RegisterComponentPres = ({
             id="flat_number"
             placeholder="Nr domu"
             value={flatNumber}
-            onChange={(e) => handleFlatNumberChange(e)}
+            onChange={(e) => handleRegisterData(e)}
           />
         </div>
         <div className="registration-input-div">
@@ -87,7 +78,7 @@ const RegisterComponentPres = ({
             id="password"
             placeholder="Hasło"
             value={password}
-            onChange={(e) => handlePasswordChange(e)}
+            onChange={(e) => handleRegisterData(e)}
           />
         </div>
         <div className="registration-input-div">
@@ -98,7 +89,7 @@ const RegisterComponentPres = ({
             id="phone"
             placeholder="Telefon"
             value={phone}
-            onChange={(e) => handlePhoneChange(e)}
+            onChange={(e) => handleRegisterData(e)}
           />
         </div>
         <div className="buttons">
