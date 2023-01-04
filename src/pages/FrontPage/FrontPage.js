@@ -3,18 +3,26 @@ import FrontPagePres from "./FrontPagePres.js";
 
 const FrontPage = () => {
   const [isFullScreen, setIsFullScreen] = useState(true);
-  // hiding sidebar
   useEffect(() => {
-    // if (isSidebarOpen) {
-    //   setIsSidebarOpen(false);
-    // }
     if (window.screen.width < 768) {
       setIsFullScreen(false);
     } else {
       setIsFullScreen(true);
     }
   }, []);
-  return <FrontPagePres />;
+
+  return (
+    <div className="FrontPage">
+      <Sidebar smallScreenVisibility={"smallScreenVisibility"} />
+      <Basket />
+      <Navigation />
+      <FrontImage />
+      <About />
+      <MainInfo />
+      <TryOut />
+      <Footer />
+    </div>
+  );
 };
 
 export default FrontPage;

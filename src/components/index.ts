@@ -3,7 +3,7 @@ import About from "./About";
 import TryOut from "./TryOut";
 import Footer from "./Footer/Footer";
 
-import Sidebar from "./Sidebar/Sidebar";
+import Sidebar from "./Sidebar";
 import Filter from "./Filter/Filter";
 import Basket from "./Basket";
 import BasketProduct from "./BasketProduct";
