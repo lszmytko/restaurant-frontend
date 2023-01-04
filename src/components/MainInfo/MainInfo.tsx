@@ -1,12 +1,11 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { AiOutlineArrowDown, AiOutlineArrowUp } from "react-icons/ai";
+import { BsInfoCircle } from "react-icons/bs";
 
 import { deliveryHours, openingHours } from "../../data/data.js";
 import { showCurrentHours } from "./utils";
 import DeliveryHours from "../DeliveryHours";
-import OpeningHours from "../OpeningHours/OpeningHours";
-
-import { BsInfoCircle } from "react-icons/bs";
+import OpeningHours from "../OpeningHours";
 
 const MainInfo = () => {
   const [openingDetailsShown, setOpeningDetailsShown] = useState(false);

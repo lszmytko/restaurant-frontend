@@ -7,7 +7,7 @@ import {
   Sidebar,
   Basket
 } from "../../components";
-import Navigation from "../../components/Navigation/Navigation.js";
+import Navigation from "../../components/Navigation";
 import MainInfo from "../../components/MainInfo";
 
 const FrontPagePres = () => {

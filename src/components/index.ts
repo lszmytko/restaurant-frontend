@@ -1,6 +1,6 @@
 import FrontImage from "./FrontImage";
 import About from "./About";
-import TryOut from "./TryOut/TryOut";
+import TryOut from "./TryOut";
 import Footer from "./Footer/Footer";
 
 import Sidebar from "./Sidebar/Sidebar";
