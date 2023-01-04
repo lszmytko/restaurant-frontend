@@ -1,20 +1,17 @@
-import React from "react";
+import { useState } from "react";
 import { AiOutlineArrowDown, AiOutlineArrowUp } from "react-icons/ai";
 
-import { BsInfoCircle } from "react-icons/bs";
+import { deliveryHours, openingHours } from "../../data/data.js";
+import { showCurrentHours } from "./utils";
 import DeliveryHours from "../DeliveryHours";
 import OpeningHours from "../OpeningHours/OpeningHours";
 
-const MainInfoPres = ({
-  openingDetailsShown,
-  showCurrentHours,
-  openingHours,
-  checkTime,
-  setOpeningDetailsShown,
-  deliveryDetailsShown,
-  deliveryHours,
-  setDeliveryDetailsShown,
-}) => {
+import { BsInfoCircle } from "react-icons/bs";
+
+const MainInfo = () => {
+  const [openingDetailsShown, setOpeningDetailsShown] = useState(false);
+  const [deliveryDetailsShown, setDeliveryDetailsShown] = useState(false);
+
   return (
     <section className="MainInfo section">
       <section className="section-center">
@@ -29,10 +26,7 @@ const MainInfoPres = ({
                 <span>Today {showCurrentHours(openingHours)}</span>
               )}
             </div>
-            <BsInfoCircle
-              className="details_svg"
-              onClick={() => checkTime(openingHours)}
-            />
+            <BsInfoCircle className="details_svg" />
             <span
               className="details_arrow"
               onClick={() =>
@@ -60,10 +54,7 @@ const MainInfoPres = ({
                 <span>Today {showCurrentHours(deliveryHours)}</span>
               )}
             </div>
-            <BsInfoCircle
-              className="details_svg"
-              onClick={() => checkTime(deliveryHours)}
-            />
+            <BsInfoCircle className="details_svg" />
             <span
               className="details_arrow"
               onClick={() =>
@@ -94,4 +85,4 @@ const MainInfoPres = ({
   );
 };
 
-export default MainInfoPres;
+export default MainInfo;

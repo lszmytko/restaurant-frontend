@@ -8,7 +8,7 @@ import {
   Basket
 } from "../../components";
 import Navigation from "../../components/Navigation/Navigation.js";
-import MainInfo from "../../components/MainInfo/MainInfo.js";
+import MainInfo from "../../components/MainInfo";
 
 const FrontPagePres = () => {
   return (
