@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
+
 import { useGlobalContext } from "../../context/context";
-import { useLogRegContext } from "../../context/logregcontext";
-import CustomerPagePres from "./CustomerPagePres";
+import { Sidebar } from "../../components";
+import CustomerData from "../../components/CustomerData";
+import CustomerHistory from "../../components/CustomerHistory/CustomerHistory";
+import LoginModal from "../../components/LoginModal";
+import LogOut from "../../components/LogOut/LogOut";
 
 const CustomerPage = () => {
-  // If to show login component to log for the users details
-  const { showLoginModal } = useLogRegContext();
-  // info about user - whether he is logged in , name etc.
   const { userInfo } = useGlobalContext();
   const [loading, setLoading] = useState(false);
 
@@ -18,7 +19,23 @@ const CustomerPage = () => {
     }
   }, []);
 
-  return <CustomerPagePres userInfo={userInfo} loading={loading} setLoading={setLoading}/>;
+  return (
+    <div className="CustomerPage">
+      <Sidebar />
+      {userInfo.isLogged && <LogOut />}
+      <div className="container">
+        <h1>Twoje konto</h1>
+        {userInfo.isLogged ? (
+          <section className="userInfoContainer">
+            <CustomerData setLoading={setLoading} loading={loading} />
+            <CustomerHistory />
+          </section>
+        ) : (
+          <LoginModal />
+        )}
+      </div>
+    </div>
+  );
 };
 
 export default CustomerPage;
