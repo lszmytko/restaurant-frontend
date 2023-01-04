@@ -2,7 +2,7 @@ import React from "react";
 import { Sidebar } from "../../components";
 import { Link } from "react-router-dom";
 import Loader from "react-loader-spinner";
-import LoginModal from "../../components/LoginModal/LoginModal.js";
+import LoginModal from "../../components/LoginModal";
 
 const OrderPagePres = ({
   finalInfoShown,
