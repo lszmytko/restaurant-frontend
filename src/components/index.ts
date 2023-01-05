@@ -1,7 +1,7 @@
 import FrontImage from "./FrontImage";
 import About from "./About";
 import TryOut from "./TryOut";
-import Footer from "./Footer/Footer";
+import Footer from "./Footer";
 
 import Sidebar from "./Sidebar";
 import Filter from "./Filter/Filter";

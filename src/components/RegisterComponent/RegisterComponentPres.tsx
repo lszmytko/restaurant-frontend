@@ -23,18 +23,18 @@ const RegisterComponentPres = ({
             id="name"
             placeholder="Imię"
             value={registerData.name}
-            onChange={(e) => handleRegisterData(e)}
+            onChange={handleRegisterData}
           />
         </div>
         <div className="registration-input-div">
           <label htmlFor="last_name">Nazwisko</label>
           <input
             type="text"
-            name="last_name"
+            name="lastName"
             id="last_name"
             placeholder="Nazwisko"
             value={lastName}
-            onChange={(e) => handleRegisterData(e)}
+            onChange={handleRegisterData}
           />
         </div>
         <div className="registration-input-div">
@@ -45,7 +45,7 @@ const RegisterComponentPres = ({
             id="email"
             placeholder="Email"
             value={email}
-            onChange={(e) => handleRegisterData(e)}
+            onChange={handleRegisterData}
           />
         </div>
         <div className="registration-input-div">
@@ -56,18 +56,18 @@ const RegisterComponentPres = ({
             id="street"
             placeholder="Ulica"
             value={street}
-            onChange={(e) => handleRegisterData(e)}
+            onChange={handleRegisterData}
           />
         </div>
         <div className="registration-input-div">
           <label htmlFor="flat_number">Nr domu</label>
           <input
             type="text"
-            name="flat_number"
+            name="flatNumber"
             id="flat_number"
             placeholder="Nr domu"
             value={flatNumber}
-            onChange={(e) => handleRegisterData(e)}
+            onChange={handleRegisterData}
           />
         </div>
         <div className="registration-input-div">
@@ -78,7 +78,7 @@ const RegisterComponentPres = ({
             id="password"
             placeholder="Hasło"
             value={password}
-            onChange={(e) => handleRegisterData(e)}
+            onChange={handleRegisterData}
           />
         </div>
         <div className="registration-input-div">
@@ -89,7 +89,7 @@ const RegisterComponentPres = ({
             id="phone"
             placeholder="Telefon"
             value={phone}
-            onChange={(e) => handleRegisterData(e)}
+            onChange={handleRegisterData}
           />
         </div>
         <div className="buttons">

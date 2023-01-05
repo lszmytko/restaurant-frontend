@@ -9,11 +9,16 @@ const DishCardPres = ({
   decreaseQuantity,
   visible,
   addToBasket,
-  element,
+  element
 }) => {
   return (
     <div className="DishCard">
-      <div ref={element} className={!visible ? "intersection not-visible" : "intersection visible"}>
+      <div
+        ref={element}
+        className={
+          !visible ? "intersection not-visible" : "intersection visible"
+        }
+      >
         <img src={image} alt={name} />
         <article className="cardInfo">
           <h4>{name}</h4>
@@ -41,7 +46,7 @@ const DishCardPres = ({
                   image,
                   price,
                   name,
-                  quantity,
+                  quantity
                 })
               }
             >

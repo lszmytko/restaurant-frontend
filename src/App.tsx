@@ -1,11 +1,14 @@
-import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
-import FrontPage from "./pages/FrontPage";
-import MenuPage from "./pages/MenuPage/MenuPage";
-import OrderPage from "./pages/OrderPage/OrderPage";
-import DeliveryPage from "./pages/DeliveryPage";
 import React from "react";
+import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
+
+import {
+  FrontPage,
+  MenuPage,
+  OrderPage,
+  DeliveryPage,
+  CustomerPage
+} from "./pages";
 import { LogRegContextProvider } from "./context/logregcontext.js";
-import CustomerPage from "./pages/CustomerPage";
 
 function App() {
   return (

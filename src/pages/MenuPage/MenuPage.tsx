@@ -1,10 +1,32 @@
+import { dishes } from "../../data/data";
+import { useGlobalContext } from "../../context/context.js";
+import { useEffect } from "react";
 import React from "react";
 
 import AddedItemModal from "../../components/AddedItemModal";
-import DishCard from "../../components/DishCard/DishCard";
+import DishCard from "../../components/DishCard";
 import { Filter, Sidebar, Basket } from "../../components";
 
-const MenuPagePres = ({ dishesDisplayed, isAddedModalOpen }) => {
+const MenuPage = () => {
+  const {
+    isAddedModalOpen,
+    dishesDisplayed,
+    filterCriteria,
+    filterDishes,
+    setIsSidebarOpen,
+    isSidebarOpen
+  } = useGlobalContext();
+
+  useEffect(() => {
+    if (isSidebarOpen) {
+      setIsSidebarOpen(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    filterDishes(dishes, dishesDisplayed);
+  }, [filterCriteria]);
+
   return (
     <section className="MenuPage">
       <Sidebar />
@@ -19,13 +41,7 @@ const MenuPagePres = ({ dishesDisplayed, isAddedModalOpen }) => {
           {dishesDisplayed.map((dish, index) => {
             const { name, price, image } = dish;
             return (
-              <DishCard
-                name={name}
-                image={image}
-                price={price}
-                key={index}
-                className="dish"
-              />
+              <DishCard name={name} image={image} price={price} key={index} />
             );
           })}
         </section>
@@ -35,4 +51,4 @@ const MenuPagePres = ({ dishesDisplayed, isAddedModalOpen }) => {
   );
 };
 
-export default MenuPagePres;
+export default MenuPage;
