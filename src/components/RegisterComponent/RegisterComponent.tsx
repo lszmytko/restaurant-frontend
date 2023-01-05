@@ -1,9 +1,9 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { useGlobalContext } from "../../context/context";
+import validator from "validator";
+
 import { useLogRegContext } from "../../context/logregcontext";
 import RegisterComponentPres from "./RegisterComponentPres";
-import validator from "validator";
 
 const RegisterComponent = () => {
   const [registerData, setRegisterData] = useState({
@@ -30,10 +30,14 @@ const RegisterComponent = () => {
   const { setLoading, loading, setLogRegOption, handleBackToChoice } =
     useLogRegContext();
 
-  const handleRegisterData = (e, data: keyof typeof registerData) => ({
-    ...registerData,
-    [data]: e.target.value
-  });
+  const handleRegisterData = (e) => {
+    const value = e.target.value;
+    const field = e.target.name;
+    setRegisterData({
+      ...registerData,
+      [field]: value
+    });
+  };
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -80,7 +84,7 @@ const RegisterComponent = () => {
     try {
       setLoading(true);
       const response = await axios.post(
-        "https://restaurant-site-api.herokuapp.com/users/register",
+        `https://${process.env.server}/users/register`,
         {
           name,
           lastName,

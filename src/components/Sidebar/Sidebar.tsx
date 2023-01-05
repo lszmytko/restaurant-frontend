@@ -1,23 +1,24 @@
-import { useGlobalContext } from "../../context/context.js";
 import React from "react";
-import SidebarPres from "./SidebarPres.js";
+
+import { useGlobalContext } from "../../context/context.js";
+import { Hamburger } from "./components/Hamburger";
+import { SidebarLinks } from "./components/SidebarLinks";
 
 const Sidebar = ({
   smallScreenVisibility
 }: {
   smallScreenVisibility?: string;
 }) => {
-  const { isSidebarOpen, setIsSidebarOpen } = useGlobalContext();
+  const { isSidebarOpen } = useGlobalContext();
   const classes = isSidebarOpen
     ? `sidebar-open ${smallScreenVisibility && smallScreenVisibility}`
     : `sidebar-closed ${smallScreenVisibility && smallScreenVisibility}`;
 
   return (
-    <SidebarPres
-      isSidebarOpen={isSidebarOpen}
-      classes={classes}
-      setIsSidebarOpen={setIsSidebarOpen}
-    />
+    <aside className={`Sidebar ${classes}`}>
+      <Hamburger />
+      <SidebarLinks />
+    </aside>
   );
 };
 

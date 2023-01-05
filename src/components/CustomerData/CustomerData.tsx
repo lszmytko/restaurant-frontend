@@ -1,5 +1,6 @@
-import axios from "axios";
 import React, { useState, useEffect } from "react";
+import axios from "axios";
+
 import { useGlobalContext } from "../../context/context";
 import CustomerDataPres from "./CustomerDataPres";
 
@@ -73,10 +74,11 @@ const CustomerData = ({ setLoading, loading }) => {
     setLoading(false);
   };
 
-  const handleDataChange = (e, info) => {
+  const handleDataChange = (e) => {
+    const { name, value } = e.target;
     setData((prevData) => ({
       ...prevData,
-      [info]: e.target.value
+      [name]: value
     }));
   };
 
