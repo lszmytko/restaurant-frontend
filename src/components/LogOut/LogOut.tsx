@@ -13,7 +13,7 @@ const LogOut = () => {
       name: "",
       email: "",
       password: "",
-      flatnumber: "",
+      flatNumber: "",
       phone: ""
     });
 

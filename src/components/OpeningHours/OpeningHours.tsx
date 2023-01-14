@@ -1,6 +1,6 @@
 import React from "react";
 
-import { openingHours } from "../../data/data.js";
+import { openingHours } from "../../data/data";
 
 const OpeningHours = () => {
   return (

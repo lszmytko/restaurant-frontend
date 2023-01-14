@@ -1,11 +1,14 @@
-import { dishes } from "../../data/data";
-import { useGlobalContext } from "../../context/context.js";
-import { useEffect } from "react";
-import React from "react";
+import React, { useEffect } from "react";
 
-import AddedItemModal from "../../components/AddedItemModal";
-import DishCard from "../../components/DishCard";
-import { Filter, Sidebar, Basket } from "../../components";
+import { dishes } from "../../data/data";
+import { useGlobalContext } from "../../context/context";
+import {
+  Filter,
+  Sidebar,
+  Basket,
+  DishCard,
+  AddedItemModal
+} from "../../components";
 
 const MenuPage = () => {
   const {
@@ -24,7 +27,7 @@ const MenuPage = () => {
   }, []);
 
   useEffect(() => {
-    filterDishes(dishes, dishesDisplayed);
+    filterDishes(dishes);
   }, [filterCriteria]);
 
   return (

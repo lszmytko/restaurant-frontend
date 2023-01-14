@@ -1,20 +1,22 @@
 import React, { useState, useContext } from "react";
-import { useGlobalContext } from "./context";
 
-const LogRegContext = React.createContext();
+import { LogRegContextType } from "./types";
+
+const LogRegContext = React.createContext<LogRegContextType | null>(null);
 
 const LogRegContextProvider = ({ children }) => {
   const [showLoginModal, setShowLoginModal] = useState(true);
   const [loading, setLoading] = useState(false);
   const [logRegOption, setLogRegOption] = useState({
-    choice: "before",
+    choice: "before"
   });
 
-  // Back to choice between login or register
-  const handleBackToChoice = (e) => {
+  const handleBackToChoice = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
     e.preventDefault();
     setLogRegOption({
-      choice: "before",
+      choice: "before"
     });
   };
 
@@ -27,7 +29,7 @@ const LogRegContextProvider = ({ children }) => {
         setLoading,
         logRegOption,
         setLogRegOption,
-        handleBackToChoice,
+        handleBackToChoice
       }}
     >
       {children}

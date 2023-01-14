@@ -1,5 +1,4 @@
 import React from "react";
-import "moment/locale/pl";
 
 import { useGetCustomerHistory } from "./useGetCustomerHistory";
 import { Loader } from "./components/Loader";

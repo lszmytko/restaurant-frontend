@@ -2,10 +2,16 @@ import React, { useState, useEffect } from "react";
 
 import { useGlobalContext } from "../../context/context";
 import { Sidebar } from "../../components";
-import CustomerData from "../../components/CustomerData";
-import CustomerHistory from "../../components/CustomerHistory";
-import LoginModal from "../../components/LoginModal";
-import LogOut from "../../components/LogOut/LogOut";
+import {
+  CustomerData,
+  CustomerHistory,
+  LoginModal,
+  LogOut
+} from "../../components";
+// import CustomerData from "../../components/CustomerData";
+// import CustomerHistory from "../../components/CustomerHistory";
+// import LoginModal from "../../components/LoginModal";
+// import LogOut from "../../components/LogOut/LogOut";
 
 const CustomerPage = () => {
   const { userInfo } = useGlobalContext();
@@ -25,7 +31,7 @@ const CustomerPage = () => {
       {userInfo.isLogged && <LogOut />}
       <div className="container">
         <h1>Twoje konto</h1>
-        {!userInfo.isLogged ? (
+        {userInfo.isLogged ? (
           <section className="userInfoContainer">
             <CustomerData setLoading={setLoading} loading={loading} />
             <CustomerHistory />

@@ -84,7 +84,7 @@ const RegisterComponent = () => {
     try {
       setLoading(true);
       const response = await axios.post(
-        `https://${process.env.server}/users/register`,
+        `${process.env.REACT_APP_ADDRESS}/users/register`,
         {
           name,
           lastName,

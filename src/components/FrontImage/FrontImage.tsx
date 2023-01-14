@@ -19,7 +19,7 @@ const FrontImage = () => {
           <span>jak chcielibyśmy jadać</span>
         </h2>
         <div className="slides">
-          {slides.map((slide, index) => {
+          {slides.map((_, index) => {
             return (
               <div
                 className={`${

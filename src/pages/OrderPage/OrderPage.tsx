@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-import { useGlobalContext } from "../../context/context.js";
-import { useLogRegContext } from "../../context/logregcontext.js";
+import { useGlobalContext } from "../../context/context";
+import { useLogRegContext } from "../../context/logregcontext";
 import OrderPagePres from "./OrderPagePres";
 import { useHandleOrder } from "./hooks/useHandleOrder";
+import { cardData } from "../../context/types";
 
 const DELIVERY_PRICE = 5;
 
@@ -60,15 +61,17 @@ const OrderPage = () => {
     });
   };
 
-  const calculatetotalOrder = () => {
-    const value = orderedCard.reduce((total, item) => {
+  const calculateOrderValue = () => {
+    if (!orderedCard.length) return 0;
+    const value = (orderedCard as cardData).reduce((total, item) => {
       return (total += item.quantity * item.price);
     }, 0);
+
     setTotalValue(parseFloat(value.toFixed(2)));
   };
 
   useEffect(() => {
-    calculatetotalOrder();
+    calculateOrderValue();
   });
 
   useEffect(() => {
