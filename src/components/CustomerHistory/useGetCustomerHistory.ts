@@ -6,18 +6,21 @@ import { useGlobalContext } from "../../context/context";
 
 export const useGetCustomerHistory = () => {
   const {
-    userInfo: { accessToken, id }
+    userInfo: { userId }
   } = useGlobalContext();
   const [ordersInfo, setOrdersInfo] = useState("");
   const [isHistoryLoaded, setIsHistoryLoaded] = useState(false);
 
   const getHistory = async () => {
+    const token = localStorage.getItem("token");
+    console.log("przeszło", token);
+    console.log({ token });
     try {
       const response = await axios.post(
-        "https://restaurant-site-api.herokuapp.com/history",
+        `${process.env.REACT_APP_ADDRESS}/history`,
         {
-          token: accessToken,
-          id
+          token,
+          userId
         },
         {
           headers: {
@@ -25,6 +28,8 @@ export const useGetCustomerHistory = () => {
           }
         }
       );
+
+      console.log({ response });
       // parse the json of the dishes returned
       const finalResponse = response.data.message.map((element) => {
         return { ...element, dishes: JSON.parse(element.dishes)[0] };

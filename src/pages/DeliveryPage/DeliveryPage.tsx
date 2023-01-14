@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 import { Footer, Sidebar } from "../../components";
 import { useGlobalContext } from "../../context/context";
-import MyMapComponent from "../../components/MyMapComponent/MyMapComponent";
+import MyMapComponent from "../../components/MyMapComponent";
 import { info1, info2 } from "./static";
 import { getTodayDeliveryHours, getTodayOpeningHours } from "./utils";
 

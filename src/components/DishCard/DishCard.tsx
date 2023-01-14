@@ -1,44 +1,23 @@
-import React, { useState, useEffect, useRef } from "react";
-import { useGlobalContext } from "../../context/context.js";
-import DishCardPres from "./DishCardPres";
+import React from "react";
+
 import { useObserver } from "./useOberver";
+import CardDetails from "./components/CardDetails";
 
 const DishCard = ({ image, price, name }) => {
-  const [quantity, setQuantity] = useState(0);
-  const { isAddedModalOpen, addToBasket } = useGlobalContext();
-
   const { visible, element } = useObserver();
 
-  useEffect(() => {
-    if (!isAddedModalOpen) {
-      setQuantity(0);
-    }
-  }, [isAddedModalOpen]);
-
-  const increaseQuantity = () => {
-    setQuantity((prevQuantity) => {
-      return prevQuantity + 1;
-    });
-  };
-
-  const decreaseQuantity = () => {
-    setQuantity((prevQuantity) => {
-      return prevQuantity - 1;
-    });
-  };
-
   return (
-    <DishCardPres
-      decreaseQuantity={decreaseQuantity}
-      increaseQuantity={increaseQuantity}
-      image={image}
-      price={price}
-      name={name}
-      visible={visible}
-      addToBasket={addToBasket}
-      element={element}
-      quantity={quantity}
-    />
+    <div className="DishCard">
+      <div
+        ref={element}
+        className={
+          !visible ? "intersection not-visible" : "intersection visible"
+        }
+      >
+        <img src={image} alt={name} />
+        <CardDetails name={name} price={price} image={image} />
+      </div>
+    </div>
   );
 };
 

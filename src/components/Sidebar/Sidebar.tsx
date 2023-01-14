@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useGlobalContext } from "../../context/context.js";
+import { useGlobalContext } from "../../context/context";
 import { Hamburger } from "./components/Hamburger";
 import { SidebarLinks } from "./components/SidebarLinks";
 

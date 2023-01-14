@@ -8,26 +8,21 @@ const LoginComponent = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
-  const { userInfo, setUserInfo } = useGlobalContext();
+  const { setUserInfo } = useGlobalContext();
   const [loginSuccesful, setLoginSuccesful] = useState({});
   const [loading, setLoading] = useState(false);
 
-  const {
-    showLoginModal,
-    setShowLoginModal,
-    setLogRegOption,
-    handleBackToChoice,
-  } = useLogRegContext();
+  const { setShowLoginModal, handleBackToChoice } = useLogRegContext();
 
   const handleLogIn = async (e) => {
     e.preventDefault();
     try {
       setLoading(true);
       const response = await axios.post(
-        "https://restaurant-site-api.herokuapp.com/users/login",
+        `${process.env.REACT_APP_ADDRESS}/users/login`,
         {
           email,
-          password,
+          password
         }
       );
 
@@ -35,17 +30,15 @@ const LoginComponent = () => {
       const jwtToken = response.data.jwtToken;
       if (Object.keys(userData).length) {
         const { id, name, lastname, flatnumber, phone, street } = userData;
-        setUserInfo((prevUser) => {
-          return {
-            id,
-            name,
-            phone,
-            street,
-            email,
-            flatNumber: flatnumber,
-            lastName: lastname,
-            isLogged: true,
-          };
+        setUserInfo({
+          userId: id,
+          name,
+          phone,
+          street,
+          email,
+          flatNumber: flatnumber,
+          lastName: lastname,
+          isLogged: true
         });
 
         localStorage.setItem("token", jwtToken.token);
@@ -77,7 +70,7 @@ const LoginComponent = () => {
     } else if (!isButtonDisabled && (password.length < 8 || !email.length)) {
       setIsButtonDisabled(true);
     }
-  }, [email, password]);  
+  }, [email, password]);
 
   return (
     <LoginComponentPres

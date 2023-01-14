@@ -9,7 +9,7 @@ const LoginComponentPres = ({
   handleLogIn,
   handleBackToChoice,
   loginSuccesful,
-  loading,
+  loading
 }) => {
   return (
     <div className="LoginComponent">
@@ -43,7 +43,7 @@ const LoginComponentPres = ({
         </button>
         <button
           className="login_btn backtoChoice_btn"
-          onClick={(e) => handleBackToChoice(e)}
+          onClick={handleBackToChoice}
           type="submit"
         >
           Wróć

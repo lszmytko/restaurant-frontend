@@ -10,22 +10,16 @@ export const useHandleOrder = () => {
 
   const { setShowLoginModal } = useLogRegContext();
 
-  const {
-    orderedCard,
-    setOrderedCard,
-    userInfo,
-    setIsSidebarOpen,
-    isSidebarOpen
-  } = useGlobalContext();
+  const { orderedCard, userInfo } = useGlobalContext();
 
   const handleOrder = async (id) => {
     try {
       const response = await axios.post(
-        "https://restaurant-site-api.herokuapp.com/placeOrder",
+        `${process.env.REACT_APP_ADDRESS}/placeOrder`,
         {
           dishes: orderedCard,
           price: totalValue,
-          customer_id: userInfo.id,
+          customer_id: userInfo.userId,
           date: new Date(),
           token: userInfo.accessToken
         },

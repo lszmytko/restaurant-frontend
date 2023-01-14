@@ -8,8 +8,7 @@ const RegisterComponentPres = ({
   error,
   loading
 }) => {
-  const { name, lastName, email, street, flatNumber, password, phone } =
-    registerData;
+  const { lastName, email, street, flatNumber, password, phone } = registerData;
 
   return (
     <div className="RegisterComponent">
@@ -103,7 +102,7 @@ const RegisterComponentPres = ({
           <button
             className=" btn backtoChoice_btn"
             type="submit"
-            onClick={(e) => handleBackToChoice(e)}
+            onClick={handleBackToChoice}
           >
             Wróć
           </button>

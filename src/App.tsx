@@ -8,7 +8,7 @@ import {
   DeliveryPage,
   CustomerPage
 } from "./pages";
-import { LogRegContextProvider } from "./context/logregcontext.js";
+import { LogRegContextProvider } from "./context/logregcontext";
 
 function App() {
   return (

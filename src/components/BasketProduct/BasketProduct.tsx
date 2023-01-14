@@ -2,11 +2,14 @@ import React from "react";
 
 import { useGlobalContext } from "../../context/context";
 
-const BasketProduct = ({ data }) => {
-  const { removeFromBasket } = useGlobalContext();
+const BasketProduct = () => {
+  const { removeFromBasket, card } = useGlobalContext();
+
+  if (!card.length) return <p>Wybierz najpierw danie!</p>;
+
   return (
     <article className="BasketProduct">
-      {data.map((product, index) => {
+      {card.map((product, index) => {
         const { name, price, quantity } = product;
         return (
           <div className="card-container" id={index} key={index}>
@@ -17,7 +20,7 @@ const BasketProduct = ({ data }) => {
               <i
                 className="fas fa-trash trash"
                 data-index={index}
-                onClick={(e) => removeFromBasket(e)}
+                onClick={removeFromBasket}
               ></i>
             </div>
           </div>

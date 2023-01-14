@@ -22,7 +22,7 @@
   min-width: 15rem;
   height: 20rem;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .About h2 {
@@ -48,10 +48,10 @@
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     -ms-flex-line-pack: stretch;
-        align-content: stretch;
+    align-content: stretch;
   }
   .About .underline {
     margin: 2px auto 5px;
@@ -68,7 +68,7 @@
   .About .description p {
     font-size: 0.9rem;
     -ms-flex-line-pack: stretch;
-        align-content: stretch;
+    align-content: stretch;
   }
 }
 
@@ -141,8 +141,8 @@
 
 .AddressForm .form-input input {
   -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
   border: 2px solid #009199;
   border-radius: 0.5rem;
   padding: 0 0.25rem;
@@ -153,7 +153,7 @@
 .AddressForm .form-input input:focus {
   outline: none;
   -webkit-box-shadow: 0 0 5px #009199;
-          box-shadow: 0 0 5px #009199;
+  box-shadow: 0 0 5px #009199;
 }
 
 .AddressForm .options {
@@ -218,7 +218,7 @@
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: auto auto 1fr auto;
-      grid-template-rows: auto auto 1fr auto;
+  grid-template-rows: auto auto 1fr auto;
   color: white;
 }
 
@@ -232,19 +232,19 @@
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   letter-spacing: 0.25rem;
   text-align: center;
 }
 
 .basket_container .basket-div-open {
   -webkit-transform: translateX(0);
-          transform: translateX(0);
+  transform: translateX(0);
 }
 
 .basket_container .basket-div-closed {
   -webkit-transform: translateX(100%);
-          transform: translateX(100%);
+  transform: translateX(100%);
 }
 
 .basket_container .basket-div-close-btn {
@@ -310,8 +310,8 @@
   display: flex;
   gap: 0.75rem;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   font-size: 0.875rem;
   color: white;
   letter-spacing: 0.05rem;
@@ -320,8 +320,8 @@
 
 .BasketProduct .card-container .name {
   -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
 }
 
 .BasketProduct .name::first-letter {
@@ -385,8 +385,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .CustomerData form {
@@ -413,15 +413,15 @@
 .CustomerHistory .order-headers {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-columns: (1fr) [3];
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .CustomerHistory .order-details-article {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .CustomerHistory h3 {
@@ -432,7 +432,7 @@
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: auto 1fr;
-      grid-template-rows: auto 1fr;
+  grid-template-rows: auto 1fr;
   row-gap: 0.5rem;
   padding: 0.5rem;
 }
@@ -491,8 +491,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   gap: 2rem;
 }
 
@@ -501,18 +501,18 @@
 }
 
 .DishCard .intersection {
-  -webkit-transition: all .5s linear;
-  transition: all .5s linear;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
 }
 
 .DishCard .visible {
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
 }
 
 .DishCard .not-visible {
   -webkit-transform: scale(0.3);
-          transform: scale(0.3);
+  transform: scale(0.3);
 }
 
 .DishCard .plus-minus-button {
@@ -541,8 +541,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .Filter .price-form-container {
@@ -610,11 +610,11 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   margin-bottom: 1rem;
 }
 
@@ -623,8 +623,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .Filter .filter-form-option {
@@ -640,8 +640,8 @@
 
 .Filter input[type="checkbox"] {
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   width: 1rem;
   height: 1rem;
   border: 2px solid #006166;
@@ -664,8 +664,8 @@
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
   }
   .Filter .price-form {
     width: 40%;
@@ -674,11 +674,11 @@
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     margin-bottom: 0;
   }
   .Filter .price-form label {
@@ -709,8 +709,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin-bottom: 2rem;
   font-size: 1rem;
 }
@@ -766,7 +766,7 @@
 .FrontImage .photo img {
   opacity: 0.5;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   height: 100%;
 }
 
@@ -774,15 +774,15 @@
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   bottom: 5%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   background: transparent;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .FrontImage .slider {
@@ -834,8 +834,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .LoginComponent h3 {
@@ -888,11 +888,11 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   overflow: hidden;
 }
 
@@ -961,8 +961,8 @@
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
   }
   .LogRegChoice h2 {
     font-size: 2.5rem;
@@ -1000,12 +1000,12 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   line-height: 1;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .MainInfo .details_svg {
@@ -1035,10 +1035,10 @@
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
     -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
   }
   .MainInfo .info {
     min-width: 300px;
@@ -1058,7 +1058,7 @@
 .Navigation {
   z-index: 1;
   -webkit-box-shadow: 4px 4px 12px getPrimaryColor(clr-primary-3);
-          box-shadow: 4px 4px 12px getPrimaryColor(clr-primary-3);
+  box-shadow: 4px 4px 12px getPrimaryColor(clr-primary-3);
   position: fixed;
   left: 0;
   top: 0;
@@ -1071,8 +1071,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 0 2rem;
   height: 100px;
 }
@@ -1117,8 +1117,8 @@
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     color: #00f2ff;
     font-size: 1.25rem;
     width: 100%;
@@ -1144,8 +1144,8 @@
 
 .RegisterComponent .registration-input-div input {
   -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
   margin-left: 1rem;
 }
 
@@ -1299,12 +1299,13 @@
 /* grey used for paragraphs */
 .CustomerPage {
   background: #e6feff;
+  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .CustomerPage .userInfoContainer {
@@ -1327,10 +1328,10 @@
   .CustomerPage .userInfoContainer {
     max-width: 1176px;
     -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     margin: 0 auto;
     -webkit-column-gap: 10rem;
-            column-gap: 10rem;
+    column-gap: 10rem;
     padding: 2rem;
   }
 }
@@ -1378,7 +1379,7 @@
 .MenuPage .section-menu img {
   height: 15rem;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 @media screen and (min-width: 576px) {
@@ -1386,7 +1387,7 @@
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 1rem 1rem;
   }
 }
@@ -1394,7 +1395,7 @@
 @media screen and (min-width: 768px) {
   .MenuPage .section-menu {
     -ms-grid-columns: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
@@ -1412,8 +1413,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .OrderPage .details {
@@ -1454,8 +1455,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .OrderPage .product h4:nth-child(2) {
@@ -1494,8 +1495,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .OrderPage .details-name,
@@ -1591,7 +1592,7 @@
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 :root {
@@ -1619,7 +1620,7 @@ Global Styles
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -1715,7 +1716,7 @@ button {
   border: 2px solid transparent;
   cursor: pointer;
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 0.5rem;
 }
 
@@ -1726,12 +1727,12 @@ button {
 
 .sidebar-closed {
   -webkit-transform: translateX(-65%);
-          transform: translateX(-65%);
+  transform: translateX(-65%);
 }
 
 .sidebar-open {
   -webkit-transform: translateX(0);
-          transform: translateX(0);
+  transform: translateX(0);
   background: #ccfcff;
 }
 

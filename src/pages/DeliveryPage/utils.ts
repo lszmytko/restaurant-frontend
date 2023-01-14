@@ -1,4 +1,4 @@
-import { deliveryHours, openingHours } from "../../data/data.js";
+import { deliveryHours, openingHours } from "../../data/data";
 
 export const getTodayDeliveryHours = () => {
   const today = new Date().getDay();

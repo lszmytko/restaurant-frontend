@@ -1,10 +1,10 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import {
   withScriptjs,
   withGoogleMap,
   GoogleMap,
   Marker,
-  InfoWindow,
+  InfoWindow
 } from "react-google-maps";
 
 const MyMapComponent = withScriptjs(
@@ -49,4 +49,4 @@ const MyMapComponent = withScriptjs(
   })
 );
 
-export default MyMapComponent
+export default MyMapComponent;

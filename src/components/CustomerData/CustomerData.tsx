@@ -14,7 +14,7 @@ const CustomerData = ({ setLoading, loading }) => {
     name: "",
     lastName: "",
     street: "",
-    id: ""
+    userId: ""
   });
   const [error, setError] = useState({
     message: ""
@@ -22,11 +22,11 @@ const CustomerData = ({ setLoading, loading }) => {
   const [isDataChanged, setIsDataChanged] = useState(false);
 
   useEffect(() => {
-    const { flatNumber, phone, name, lastName, street, id } = userInfo;
+    const { flatNumber, phone, name, lastName, street, userId } = userInfo;
     setData({
       flatNumber,
       lastName,
-      id,
+      userId,
       street,
       name,
       phone
@@ -53,7 +53,7 @@ const CustomerData = ({ setLoading, loading }) => {
 
     try {
       const response = await axios.put(
-        `https://restaurant-site-api.herokuapp.com/update/${data.id}`,
+        `${process.env.REACT_APP_ADDRESS}/update/${data.userId}`,
         {
           flatNumber: data.flatNumber,
           phone: data.phone,
