@@ -12,13 +12,14 @@ export const useHandleOrder = () => {
 
   const {
     orderedCard,
+    setOrderedCard,
+    setCard,
     userInfo: { userId, accessToken }
   } = useGlobalContext();
 
   const totalOrderValue = calculateOrder(orderedCard);
 
   const handleOrder = async () => {
-    console.log("przeszło");
     try {
       const response = await axios.post(
         `${process.env.REACT_APP_ADDRESS}/placeOrder`,
@@ -35,12 +36,12 @@ export const useHandleOrder = () => {
           }
         }
       );
-      console.log({ response });
-      console.log({ accessToken });
-      console.log(response.data);
+
       if (response.data.success) {
         setShowLoginModal(false);
         setFinalInfoshown(true);
+        setOrderedCard([]);
+        setCard([]);
       } else {
         setShowLoginModal(true);
       }
