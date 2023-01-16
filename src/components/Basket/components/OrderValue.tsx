@@ -1,9 +1,10 @@
 import React from "react";
 
 import { useGlobalContext } from "../../../context/context";
+import { calculateOrder } from "../../../utils/calculateOrder";
 
 const OrderValue = () => {
-  const { card, calculateOrder } = useGlobalContext();
+  const { card } = useGlobalContext();
 
   if (!card.length) return null;
 

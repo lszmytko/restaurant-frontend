@@ -10,17 +10,17 @@ export const useGetCustomerHistory = () => {
   } = useGlobalContext();
   const [ordersInfo, setOrdersInfo] = useState("");
   const [isHistoryLoaded, setIsHistoryLoaded] = useState(false);
+  const [error, setError] = useState(false);
 
   const getHistory = async () => {
     const token = localStorage.getItem("token");
-    console.log("przeszło", token);
-    console.log({ token });
+    console.log(typeof userId);
     try {
       const response = await axios.post(
         `${process.env.REACT_APP_ADDRESS}/history`,
         {
           token,
-          userId
+          id: userId
         },
         {
           headers: {
@@ -29,24 +29,21 @@ export const useGetCustomerHistory = () => {
         }
       );
 
-      console.log({ response });
-      // parse the json of the dishes returned
+      console.log(response);
+
       const finalResponse = response.data.message.map((element) => {
         return { ...element, dishes: JSON.parse(element.dishes)[0] };
       });
-      // Adding orders info to this.state.
       setOrdersInfo(finalResponse);
-      // Changing the flag to show orders info
       setIsHistoryLoaded(true);
     } catch (error) {
-      console.log(error);
+      setError(true);
     }
   };
 
-  // On mount add order history to the state
   useEffect(() => {
     getHistory();
   }, []);
 
-  return { ordersInfo, isHistoryLoaded };
+  return { ordersInfo, isHistoryLoaded, error };
 };

@@ -16,7 +16,7 @@ export const Summary = ({ totalValue, deliveryPrice, handleOrder }) => {
       </div>
       <div className="underline underline-2"></div>
       <h4>Razem : {totalValue + deliveryPrice} PLN</h4>
-      <button className="btn order-btn" onClick={() => handleOrder()}>
+      <button className="btn order-btn" onClick={handleOrder}>
         Zamów
       </button>
     </div>

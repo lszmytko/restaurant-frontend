@@ -3,25 +3,31 @@ import axios from "axios";
 
 import { useGlobalContext } from "../../../context/context";
 import { useLogRegContext } from "../../../context/logregcontext";
+import { calculateOrder } from "../../../utils/calculateOrder";
 
 export const useHandleOrder = () => {
-  const [totalValue, setTotalValue] = useState(0);
   const [finalInfoShown, setFinalInfoshown] = useState(false);
 
   const { setShowLoginModal } = useLogRegContext();
 
-  const { orderedCard, userInfo } = useGlobalContext();
+  const {
+    orderedCard,
+    userInfo: { userId, accessToken }
+  } = useGlobalContext();
 
-  const handleOrder = async (id) => {
+  const totalOrderValue = calculateOrder(orderedCard);
+
+  const handleOrder = async () => {
+    console.log("przeszło");
     try {
       const response = await axios.post(
         `${process.env.REACT_APP_ADDRESS}/placeOrder`,
         {
           dishes: orderedCard,
-          price: totalValue,
-          customer_id: userInfo.userId,
+          price: totalOrderValue,
+          customer_id: userId,
           date: new Date(),
-          token: userInfo.accessToken
+          token: accessToken.token
         },
         {
           headers: {
@@ -29,6 +35,9 @@ export const useHandleOrder = () => {
           }
         }
       );
+      console.log({ response });
+      console.log({ accessToken });
+      console.log(response.data);
       if (response.data.success) {
         setShowLoginModal(false);
         setFinalInfoshown(true);

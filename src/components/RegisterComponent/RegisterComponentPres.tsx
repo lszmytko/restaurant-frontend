@@ -5,8 +5,7 @@ const RegisterComponentPres = ({
   registerData,
   handleRegister,
   handleBackToChoice,
-  error,
-  loading
+  error
 }) => {
   const { lastName, email, street, flatNumber, password, phone } = registerData;
 
@@ -95,7 +94,7 @@ const RegisterComponentPres = ({
           <button
             className="registration-btn btn"
             type="submit"
-            onClick={(e) => handleRegister(e)}
+            onClick={handleRegister}
           >
             Zarejestruj się
           </button>
@@ -107,15 +106,7 @@ const RegisterComponentPres = ({
             Wróć
           </button>
         </div>
-        {error.password && <p className="error-message">{error.password}</p>}
-        {error.isEverythingFilled && (
-          <p className="error-message">{error.isEverythingFilled}</p>
-        )}
-        {error.callToApi && <p className="error-message">{error.callToApi}</p>}
-        {error.email && <p className="error-message">{error.email}</p>}
-        {error.isEmail && <p className="error-message">{error.isEmail}</p>}
-        {error.isPhone && <p className="error-message">{error.isPhone}</p>}
-        {loading && <p className="error-message">Loading...</p>}
+        {error && <p className="error-message">{error}</p>}
       </form>
     </div>
   );

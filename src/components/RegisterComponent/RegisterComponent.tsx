@@ -5,6 +5,14 @@ import validator from "validator";
 import { useLogRegContext } from "../../context/logregcontext";
 import RegisterComponentPres from "./RegisterComponentPres";
 
+type errors =
+  | "Fill in everything"
+  | "Password too short"
+  | "Wrong email format"
+  | "Wrong phone number format"
+  | "Email already exists"
+  | "Oops! Something went wrong!";
+
 const RegisterComponent = () => {
   const [registerData, setRegisterData] = useState({
     name: "",
@@ -15,20 +23,12 @@ const RegisterComponent = () => {
     password: "",
     phone: ""
   });
-  const [error, setError] = useState({
-    password: "",
-    isEverythingFilled: "",
-    callToApi: "",
-    email: "",
-    isEmail: "",
-    isPhone: ""
-  });
+  const [error, setError] = useState<errors | null>(null);
 
   const { name, lastName, email, street, flatNumber, password, phone } =
     registerData;
 
-  const { setLoading, loading, setLogRegOption, handleBackToChoice } =
-    useLogRegContext();
+  const { setLogRegOption, handleBackToChoice } = useLogRegContext();
 
   const handleRegisterData = (e) => {
     const value = e.target.value;
@@ -41,48 +41,24 @@ const RegisterComponent = () => {
 
   const handleRegister = async (e) => {
     e.preventDefault();
-    setError({
-      password: "",
-      isEverythingFilled: "",
-      callToApi: "",
-      email: "",
-      isEmail: "",
-      isPhone: ""
-    });
+    setError(null);
 
     if (!name || !lastName || !email || !street || !flatNumber || !phone) {
-      setError((prevError) => ({
-        ...prevError,
-        isEverythingFilled: "Fill in everything"
-      }));
-      return;
+      return setError("Fill in everything");
     }
     if (password.length < 8 && password.length) {
-      setError((prevError) => ({
-        ...prevError,
-        password: "password too short"
-      }));
-      return;
+      return setError("Password too short");
     }
 
     if (!validator.isEmail(email)) {
-      setError((prevError) => ({
-        ...prevError,
-        isEmail: "wrong email format"
-      }));
-      return;
+      return setError("Wrong email format");
     }
 
     if (!validator.isMobilePhone(phone, "pl-PL")) {
-      setError((prevError) => ({
-        ...prevError,
-        isPhone: "wrong phone number format"
-      }));
-      return;
+      return setError("Wrong phone number format");
     }
 
     try {
-      setLoading(true);
       const response = await axios.post(
         `${process.env.REACT_APP_ADDRESS}/users/register`,
         {
@@ -95,25 +71,15 @@ const RegisterComponent = () => {
           password
         }
       );
+
       if (response.data.ifEmailExists) {
-        setLoading(false);
-        setError((prevError) => ({
-          ...prevError,
-          email: "Email already exists"
-        }));
-        // To stop the else of the fucntion
-        return;
+        return setError("Email already exists");
       }
       setLogRegOption({
         choice: "before"
       });
-      setLoading(false);
     } catch (error) {
-      setError({
-        ...error,
-        callToApi: "Ups! Coś poszło nie tak!"
-      });
-      setLoading(false);
+      setError("Oops! Something went wrong!");
     }
   };
 
@@ -124,7 +90,6 @@ const RegisterComponent = () => {
       handleRegister={handleRegister}
       handleBackToChoice={handleBackToChoice}
       error={error}
-      loading={loading}
     />
   );
 };

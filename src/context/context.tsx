@@ -4,10 +4,10 @@ import { dishes } from "../data/data";
 import useLocalStorage from "../hooks/useLocalStorage";
 import {
   basketData,
-  cardData,
   dishesType,
   filterCriteriaType,
-  globalContextInterface
+  globalContextInterface,
+  userInfoType
 } from "./types";
 
 const AppContext = React.createContext<globalContextInterface>(null);
@@ -21,7 +21,7 @@ const AppContextProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [dishesDisplayed, setDishesDisplayed] = useState(dishes);
   const [isBasketOpen, setIsBasketOpen] = useState(false);
-  const [userInfo, setUserInfo] = useState({
+  const [userInfo, setUserInfo] = useState<userInfoType>({
     userId: "",
     isLogged: false,
     name: "",
@@ -100,14 +100,6 @@ const AppContextProvider = ({ children }) => {
     setDishesDisplayed(filteredDishes);
   };
 
-  const calculateOrder = (card: cardData) => {
-    return card
-      .reduce((total, currentValue) => {
-        return total + currentValue.price * currentValue.quantity;
-      }, 0)
-      .toFixed(2);
-  };
-
   return (
     <AppContext.Provider
       value={{
@@ -128,7 +120,6 @@ const AppContextProvider = ({ children }) => {
         card,
         setCard,
         removeFromBasket,
-        calculateOrder,
         orderedCard,
         setOrderedCard,
         userInfo,

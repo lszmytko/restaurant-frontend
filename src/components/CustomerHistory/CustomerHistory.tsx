@@ -5,11 +5,17 @@ import { Loader } from "./components/Loader";
 import { OrdersHistory } from "./components/OrdersHistory";
 
 const CustomerHistory = () => {
-  const { ordersInfo, isHistoryLoaded } = useGetCustomerHistory();
+  const { ordersInfo, isHistoryLoaded, error } = useGetCustomerHistory();
+  console.log({ error });
   return (
     <div className="CustomerHistory">
       <h3>Ostatnie zamówienia</h3>
-      {isHistoryLoaded ? <OrdersHistory ordersInfo={ordersInfo} /> : <Loader />}
+      {error && <p> Something went wrong...</p>}
+      {!error && isHistoryLoaded ? (
+        <OrdersHistory ordersInfo={ordersInfo} />
+      ) : (
+        <Loader />
+      )}
     </div>
   );
 };
