@@ -18,7 +18,6 @@ export interface globalContextInterface {
   card: cardData | [];
   setCard: (value: any) => void;
   removeFromBasket: (e: React.SyntheticEvent<HTMLElement>) => void;
-  calculateOrder: (card: cardData) => string;
   orderedCard: cardData | [];
   setOrderedCard: (value: any) => void;
   userInfo: userInfoType;
@@ -68,7 +67,7 @@ export type userInfoType = {
   flatNumber: string;
   street?: string;
   phone: string;
-  accessToken?: string;
+  accessToken?: { maxAge: number; token: string };
 };
 
 export type dishesType = typeof dishes;

@@ -26,8 +26,10 @@ const LoginComponent = () => {
         }
       );
 
-      const userData = response.data.details;
-      const jwtToken = response.data.jwtToken;
+      const { details: userData, jwtToken } = response.data;
+
+      console.log({ jwtToken });
+
       if (Object.keys(userData).length) {
         const { id, name, lastname, flatnumber, phone, street } = userData;
         setUserInfo({
@@ -38,7 +40,8 @@ const LoginComponent = () => {
           email,
           flatNumber: flatnumber,
           lastName: lastname,
-          isLogged: true
+          isLogged: true,
+          accessToken: jwtToken
         });
 
         localStorage.setItem("token", jwtToken.token);
@@ -51,7 +54,6 @@ const LoginComponent = () => {
       }
     } catch (error) {
       setLoading(false);
-      console.log(error);
     }
   };
 
