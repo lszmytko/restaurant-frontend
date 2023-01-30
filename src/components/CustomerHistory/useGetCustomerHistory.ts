@@ -24,19 +24,20 @@ export const useGetCustomerHistory = () => {
         },
         {
           headers: {
-            "x-access-token": localStorage.getItem("token")
+            "x-access-token": token
           }
         }
       );
 
       console.log(response);
 
-      const finalResponse = response.data.message.map((element) => {
+      const finalResponse = response.data.orders.map((element) => {
         return { ...element, dishes: JSON.parse(element.dishes)[0] };
       });
       setOrdersInfo(finalResponse);
       setIsHistoryLoaded(true);
     } catch (error) {
+      setIsHistoryLoaded(true);
       setError(true);
     }
   };

@@ -6,7 +6,7 @@ import CustomerDataPres from "./CustomerDataPres";
 
 const CustomerData = ({ setLoading, loading }) => {
   // Getting the user data
-  const { userInfo } = useGlobalContext();
+  const { userInfo, setUserInfo } = useGlobalContext();
 
   const [data, setData] = useState({
     flatNumber: "",
@@ -63,6 +63,14 @@ const CustomerData = ({ setLoading, loading }) => {
         }
       );
 
+      setUserInfo({
+        ...userInfo,
+        flatNumber: data.flatNumber,
+        phone: data.phone,
+        name: data.name,
+        lastName: data.lastName,
+        street: data.street
+      });
       setLoading(false);
       setIsDataChanged(true);
     } catch (error) {

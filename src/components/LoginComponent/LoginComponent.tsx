@@ -54,6 +54,7 @@ const LoginComponent = () => {
       }
     } catch (error) {
       setLoading(false);
+      setLoginSuccesful(false);
     }
   };
 
